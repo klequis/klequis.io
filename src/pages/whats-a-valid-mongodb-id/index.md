@@ -6,6 +6,8 @@ spoiler: It might not be what you think
 
 I spent some time reading questions and discussion of valid MongoDB ObjectIDs and there is considerable confusion with the [native drivers'](https://mongodb.github.io/node-mongodb-native/) [ObjectID.isValid() function](https://mongodb.github.io/node-mongodb-native/3.2/api/ObjectID.html#.isValid)
 
+> The code for this post is at: [is-valid-hex-string-mongodb](https://github.com/klequis/is-valid-hex-string-mongodb)
+
 
 ## What's Valid?
 
@@ -25,6 +27,7 @@ Here is a screenshot of a document I created in [Robo 3T](https://robomongo.org/
 ![document in Robo 3T](https://robomongo.org/)
 
 As you can see `abc` is a valid id. So what is the full scoop? The answer can be found in the native driver's code [here (currently line 340)](https://mongodb.github.io/node-mongodb-native/3.2/api/node_modules_bson_lib_bson_objectid.js.html)
+
 
 ```js
 /**
@@ -59,15 +62,16 @@ Looking through the code you can see that
 - Any number is valid
 - A string is valid if it has a length of 12
 - A string is also valid if it has a length of 24 and passes the regex test from [the drivers code (currently line 17)](https://mongodb.github.io/node-mongodb-native/3.2/api/node_modules_bson_lib_bson_objectid.js.html)
+
 ```js
 var checkForHexRegExp = new RegExp('^[0-9a-fA-F]{24}$');
 ```
 - It is a Buffer
 - And finally, if it can be converted to a hex string and then pass the test
+
 ```js
 return id.id.length === 12 || (id.id.length === 24 && checkForHexRegExp.test(id.id));
 ```
-
 
 ## Check if an id is as described in [MongoDB Glossary](https://docs.mongodb.com/manual/reference/glossary/index.html)
 
@@ -91,5 +95,7 @@ export const isValidHexIdString = id => {
   }
 }
 ```
+
+
 
 [Self](/whats-a-valid-mongodb-id/)
