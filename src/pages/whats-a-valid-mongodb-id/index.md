@@ -24,7 +24,7 @@ And it seems a reasonable guess that using `ObjectID.isValid` will check for an 
 
 Here is a screenshot of a document I created in [Robo 3T](https://robomongo.org/) with an id of 'abc'.
 
-![document in Robo 3T](https://robomongo.org/)
+![document in Robo 3T](objIdInRobo3T)
 
 As you can see `abc` is a valid id. So what is the full scoop? The answer can be found in the native driver's code [here (currently line 340)](https://mongodb.github.io/node-mongodb-native/3.2/api/node_modules_bson_lib_bson_objectid.js.html)
 
