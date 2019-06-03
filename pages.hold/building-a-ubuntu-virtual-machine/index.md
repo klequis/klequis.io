@@ -59,32 +59,32 @@ Go to the [VirtualBox download page](https://www.virtualbox.org/wiki/Downloads) 
   - Version: Ubuntu (64-bit)
   - Click Next
 
-![Name and operating system](resources/create-ubuntu-vm/name-and-operating-system.png)
+![Name and operating system](name-and-operating-system.png)
 
 ### Memory Size
   How much memory you allocate to the guest machine depends on how much memory you have on the host and what you will be doing with the VM for. With 16 GB on my host I allocate 6 GB to the guest and can do software development with MongoDB running locally. I haven't experimented but my guess is 4 GB is enough.
   - Enter the memory in MB (e.g., 6 * 1024 MB = 6144 or 6 GB)
   - Click Next
 
-![Memory size](resources/create-ubuntu-vm/memory-size.png)
+![Memory size](memory-size.png)
 
 ### Hard disk
   - Use the default: 'Create a virtual hard disk now'
   - Click Create
 
-![Hard disk](resources/create-ubuntu-vm/hard-disk.png)
+![Hard disk](hard-disk.png)
 
 ### Hard disk file type
   - Use the default: 'VDI (VirtualBox Disk Image)'
   - Click Next
 
-![Hard disk file type](resources/create-ubuntu-vm/hard-disk-file-type.png)
+![Hard disk file type](hard-disk-file-type.png)
 
 ### Storeage and physical hard disk
   - Use the default 'Dynamically allocated'
   - Click Next
 
-      ![Storage on physical hard disk](resources/create-ubuntu-vm/storage-on-physical-hard-disk.png)
+      ![Storage on physical hard disk](storage-on-physical-hard-disk.png)
 
 ### File location and size
   'Dynamically allocated', chosen in the previous step, means the file size of the VM's hard drive will start at the minimum needed and grow as necessary up to the size you set in the current screen. This means you could enter 100 GB here and the initial size will still be under 3 GB. 100 GB would be the maximum size it can grow to. I recommend putting in a large number but something significantly less then the available space on your host's hard drive.
@@ -92,7 +92,7 @@ Go to the [VirtualBox download page](https://www.virtualbox.org/wiki/Downloads) 
   - Enter a size (eg. 100.00 GB)
   - Click Create
 
-![File location and size](resources/create-ubuntu-vm/file-location-and-size.png)
+![File location and size](file-location-and-size.png)
 
 ## Virtual Machine Settings
 
@@ -100,18 +100,18 @@ A few changes will give you a better VM experience
 
 Right-click the new VM and select 'Settings...'
 
-![click settings](resources/create-ubuntu-vm/click-settings.png)
+![click settings](click-settings.png)
 
 ### General > Advanced 
 - Set both 'Shared Clipboard' and 'Drag'n'Drop' to 'Bidirectional'
 
-![general advanced](resources/create-ubuntu-vm/general-advanced.png)
+![general advanced](general-advanced.png)
 
 ### System > Processor
 
 By default the VM was given one processor. For my machine it says I have 8 CPUs. I actually have 4 cores with 2 threads per core. 2 CPUs is plenty but feel free to experiment with more.
 
-![system processor](resources/create-ubuntu-vm/system-processor.png)
+![system processor](system-processor.png)
 
 ### Display > Screen
 
@@ -120,7 +120,7 @@ By default the VM was given one processor. For my machine it says I have 8 CPUs.
 
 You can also use multiple monitors with the VM. Leave it at one for now.
 
-![display screen](resources/create-ubuntu-vm/display-screen.png)
+![display screen](display-screen.png)
 
 ## Installing the OS
 
@@ -128,23 +128,23 @@ You now have a VM with no operating system. You'll install one in the steps that
 
 - In the left pane, double click the the VM you just created or select it and click Start
 
-![VM in left hand pane](resources/create-ubuntu-vm/vm-in-left-hand-pane.png)
+![VM in left hand pane](vm-in-left-hand-pane.png)
 
 ### Select start-up disk
 - Click the folder icon and navigate to the ubuntu ISO file you downloaded
 - Click Start
 
-![Select a start-up disk](resources/create-ubuntu-vm/select-start-up-disk.png)
+![Select a start-up disk](select-start-up-disk.png)
 
 ### Welecome
 - Click Install Ubuntu
 
-![welcome screen](resources/create-ubuntu-vm/welcome.png)
+![welcome screen](welcome.png)
 
 ### Keyboard layout
 - Select your desired keyboard layout and click Continue
 
-![keyboard layout](resources/create-ubuntu-vm/keyboard-layout.png)
+![keyboard layout](keyboard-layout.png)
 
 ### Updates and other software
 'Normal installation' will give you a full featured desktop experience with word processor, spreasheet, media player and much more. 'Minimal installation' is, well, fewer applications but perfectly good for software development. If you are curious about the full Ubuntu experience, choose 'Normal installation'. If you want to save space choose 'Minimal installation'. You can always install additional software later.
@@ -159,24 +159,24 @@ With Ubuntu 16.04, the last long term release, I experienced the build hanging i
 - Check 'Install third-party software for graphics and Wi-Fi hardware and additional media formats'
 - Click Continue
 
-![updates and other software](resources/create-ubuntu-vm/updates-and-other-software.png)
+![updates and other software](updates-and-other-software.png)
 
 ### Installation type
 - Take the defaults
 - Click Install Now
 
-![installation type](resources/create-ubuntu-vm/installation-type.png)
+![installation type](installation-type.png)
 
 ### Write the changes to disks?
 - Click Continue
 
-![Write the changes to disk](resources/create-ubuntu-vm/write-the-changes-to-disk.png)
+![Write the changes to disk](write-the-changes-to-disk.png)
 
 ### Where are you?
 - Select your timezone
 - Click Continue
 
-![where are you](resources/create-ubuntu-vm/where-are-you.png)
+![where are you](where-are-you.png)
 
 
 ### Who are you?
@@ -189,7 +189,7 @@ With Ubuntu 16.04, the last long term release, I experienced the build hanging i
 
 > NOTE: By default, the VM will not accept any incoming requests/conections. I also have a firewall on my host and, no surprise, my local network is behind a router. Additionally, if the host is locked, no one can log into the guest without the host password. Given all of that, I choose the convenience of using a short 4 character password, that isn't super secret at all, as well as 'Log in automatically'.
 
-![Who are you](resources/create-ubuntu-vm/who-are-you.png)
+![Who are you](who-are-you.png)
 
 
 
@@ -197,7 +197,7 @@ With Ubuntu 16.04, the last long term release, I experienced the build hanging i
 
 Ubuntu doesn't take very long to install but you likely have time to make a cup of coffee or tea.
 
-![welcome to ubuntu](resources/create-ubuntu-vm/welcome-to-ubuntu.png)
+![welcome to ubuntu](welcome-to-ubuntu.png)
 
 ### Installation Complete
 
@@ -205,26 +205,26 @@ The installation of Ubuntu is compelte.
 
 - Click Restart Now
 
-![installation complete](resources/create-ubuntu-vm/installation-copmplete.png)
+![installation complete](installation-copmplete.png)
 
 
 ### Press Enter
 
 Ubuntu doesn't know you are installing it as a virtual machine. It thinks it is being installed from a media such as CD, DVD or USB drive. In our case, just press Enter.
 
-![press-enter](resources/create-ubuntu-vm/press-enter.png)
+![press-enter](press-enter.png)
 
 ##  Software updates
 
 At some point soon after installation, you will soon see a message from the Ubuntu software updater. This first update will be fairly large and likely contains security updates so you should install the updates as soon as you see this notice.
 
-![software-updater](resources/create-ubuntu-vm/software-updater.png)
+![software-updater](software-updater.png)
 
 ## All Done? Not Quite.
 
 You now have a Ubuntu Virtual Machine but need to install VirtualBox 'Guest Additions' which will add crutial features to the VM. The most noticable of these is that the virtual machine will display full-screen instead of the small box you have seen so far.
 
-![all done](resources/create-ubuntu-vm/all-done.png)
+![all done](all-done.png)
   
 # Install Guest Additions
 
@@ -238,11 +238,11 @@ sudo apt install build-essential
 
 From the VirtualBox menu select 'Insert Guest Additions CD image...'
 
-![insert guest additions cd image](resources/create-ubuntu-vm/insert-guest-additions-cd-image.png)
+![insert guest additions cd image](insert-guest-additions-cd-image.png)
 
 You will be asked to enter the current user's password.
 
-![authentication required](resources/create-ubuntu-vm/authentication-required.png)
+![authentication required](authentication-required.png)
 
 
 ## 
