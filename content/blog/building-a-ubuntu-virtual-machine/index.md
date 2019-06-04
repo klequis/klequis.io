@@ -240,9 +240,16 @@ From the VirtualBox menu select 'Insert Guest Additions CD image...'
 
 ![insert guest additions cd image](insert-guest-additions-cd-image.png)
 
+
+> TODO: Is this the right order?
+
+![authentication required](run-guest-additions.png)
+
 You will be asked to enter the current user's password.
 
 ![authentication required](authentication-required.png)
 
 
-## 
+
+
+## Windows
