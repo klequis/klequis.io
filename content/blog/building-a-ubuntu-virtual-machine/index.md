@@ -1,7 +1,6 @@
 ---
 title: Building a Ubuntu Desktop Virtual Machine with VirtualBox
 date: '2019-06-03'
-spoiler: It is easier than you think
 ---
 
 
@@ -244,6 +243,25 @@ You will be asked to enter the current user's password.
 ![authentication required](authentication-required.png)
 
 
+---
+
+> TODO: Add this issue with folder sharing
+
+
+# List users
+cut -d: -f1 /etc/passwd
+// or
+compgen -u
+
+
+# List groups
+compgen -g
+
+# Add user to group
+sudo usermod -aG vboxsf klequis
+
+---
 
 
 ## Windows
+
