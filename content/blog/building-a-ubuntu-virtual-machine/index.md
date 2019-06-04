@@ -5,15 +5,9 @@ spoiler: It is easier than you think
 ---
 
 
-# Why?
+# Why? &nbsp;
 
-There are a number of reasons to build a Ubuntu virtual machine.
-
-- Maybe you are curious about Linux 
-- Perhaps hear or think you _should_ learn it
-- You could run a local web or database server on it
-- In production your app runs on Ubuntu and you want to ease the pain of deployment by developing the app on Ubuntu.
-- You are already a Linux user but want to experiment in some way whithout modifying your development machine
+There are a number of reasons to build a Ubuntu virtual machine. Maybe you are curious about Linux. Perhaps you heard or think you _should_ learn it. You may want to run a local web and/or database server on it. It is possible that in production your app runs on Ubuntu and you want to ease the pain of deployment by developing the app on Ubuntu. You are already a Linux user but want to experiment in some way whithout modifying your development machine.
 
 Whatever you motivation, here is a step-by-step guild to make it easy.
 
