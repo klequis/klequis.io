@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class HTML extends React.Component {
   render() {
+    console.log('html.js')
     return (
       <html {...this.props.htmlAttributes}>
         <head>
