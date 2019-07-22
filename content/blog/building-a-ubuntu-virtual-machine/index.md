@@ -258,6 +258,7 @@ compgen -u
 compgen -g
 
 # Add user to group
+Must add this user to group on the vm
 sudo usermod -aG vboxsf klequis
 
 ---
