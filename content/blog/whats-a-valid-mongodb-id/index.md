@@ -1,7 +1,7 @@
 ---
 title: What's a Valid MongoDB ObjectID?
 date: '2019-05-24'
-spoiler: It might not be what you think
+description: It might not be what you think.
 ---
 
 I spent some time reading questions and discussion of valid MongoDB ObjectIDs and there is considerable confusion with the [native drivers'](https://mongodb.github.io/node-mongodb-native/) [ObjectID.isValid() function](https://mongodb.github.io/node-mongodb-native/3.2/api/ObjectID.html#.isValid)

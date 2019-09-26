@@ -54,11 +54,11 @@ class Layout extends React.Component {
     return (
       <div
         style={{
-          color: "var(--textNormal)",
-          background: "var(--bg)",
-          transition: "color 0.2s ease-out, background 0.2s ease-out",
-          marginLeft: "auto",
-          marginRight: "auto",
+          color: 'var(--textNormal)',
+          background: 'var(--bg)',
+          transition: 'color 0.2s ease-out, background 0.2s ease-out',
+          marginLeft: 'auto',
+          marginRight: 'auto',
           maxWidth: rhythm(24),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
@@ -66,9 +66,9 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()} klequis, {" "}
-          <a href="https://github.com/klequis/">GitHub</a> &bull;{" "}
-          <a href="http://trivalleycoders.org/">TriValley Coders</a>
+          © {new Date().getFullYear()} klequis, {' '}
+          <a href='https://github.com/klequis/'>GitHub</a> &bull;{" "}
+          <a href='http://trivalleycoders.org/'>TriValley Coders</a>
         </footer>
       </div>
     )
