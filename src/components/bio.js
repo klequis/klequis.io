@@ -41,7 +41,7 @@ function Bio() {
               Personal blog by
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
+                klequis
               </a>
             </p>
           </div>
