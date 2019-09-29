@@ -3,7 +3,7 @@ body {
   background-color: var(--bg);
 
   /* tmp styles */
-    -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
   --bg: #282c35;
   --header: #ffffff;
   --textNormal: rgba(255, 255, 255, 0.88);
@@ -301,5 +301,9 @@ pre[data-line] {
 }
 
 .anchor {
+  background-image: none;
+}
+
+a {
   background-image: none;
 }
