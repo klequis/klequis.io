@@ -1,3 +1,5 @@
+const siteAddress = new URL('https://klequis.io/')
+
 module.exports = {
   siteMetadata: {
     title: "klequis' blog",
@@ -74,5 +76,13 @@ module.exports = {
         pathToConfigModule: "src/utils/typography",
       },
     },
+    {
+      resolve: 'gatsby-plugin-s3',
+      options: {
+        bucketName: 'klequis.io',
+        protocol: siteAddress.protocol.lastIndexOf(0, -1),
+        hostname: siteAddress.hostname
+      },
+    }
   ],
 }
