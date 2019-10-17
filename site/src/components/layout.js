@@ -66,9 +66,11 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()} klequis, {' '}
+          © {new Date().getFullYear()} klequis, {' '} <br/>
           <a href='https://github.com/klequis/'>GitHub</a> &bull;{" "}
-          <a href='http://trivalleycoders.org/'>TriValley Coders</a>
+          <a href='http://trivalleycoders.org/'>TriValley Coders</a> &bull;{" "}
+          <a href='https://www.linkedin.com/in/carlbecker/'>LinkedIn</a> &bull;{" "}
+          <a href='https://carlbecker.com/'>carlbecker.com</a>
         </footer>
       </div>
     )

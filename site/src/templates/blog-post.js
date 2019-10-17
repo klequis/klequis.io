@@ -12,11 +12,16 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
+    // console.log('props', this.props)
+    console.log('frontmatter', post.frontmatter)
+
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
+          ogimage={post.frontmatter.ogimage}
+          // ogimage='try-it.png'
         />
         <h1>{post.frontmatter.title}</h1>
         <p
@@ -84,6 +89,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        ogimage
       }
     }
   }

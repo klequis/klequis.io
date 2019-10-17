@@ -38,7 +38,7 @@ function Bio() {
               }}
             />
             <p>
-              Personal blog by
+              Technical blog by
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
                 klequis

@@ -2,9 +2,11 @@
 title: Building a Ubuntu Desktop Virtual Machine with VirtualBox
 date: '2019-09-27'
 description: Ubuntu is free!
+ogimage: vm-showit.png
 ---
 
-# Building a Ubuntu Desktop Virtual Machine with VirtualBox
+![banner](hero-blog.png)
+
 
 There are many reasons why you may want to build a Linux virtual machine. For me, as an employee of large corporations I was a Windows user for nearly 15 years and used mostly Microsoft development tools. When I left the corportate world and started using non-Microsoft tools I quickly realized that most 'how to' information on the web was for Mac or Linux. I either had to search harder to find Windows information or spend time figuring it out. Not wanting to buy a Mac at that point I tried Linux and have been using it for the past five years. While I originally used Ubuntu in a virtual machine, I eventually removed Windows and installed Ubuntu. I have Windows as a virtual machine because I love Microsoft Excel.
 
