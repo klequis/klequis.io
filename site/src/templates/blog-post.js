@@ -10,10 +10,11 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
+    const href = this.props.location.href
     const { previous, next } = this.props.pageContext
 
     // console.log('props', this.props)
-    console.log('frontmatter', post.frontmatter)
+    // console.log('frontmatter', post.frontmatter)
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -21,7 +22,9 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
           ogimage={post.frontmatter.ogimage}
-          // ogimage='try-it.png'
+          ogurl={href}
+          ogtype='article'
+          ogdate={post.frontmatter.date}
         />
         <h1>{post.frontmatter.title}</h1>
         <p

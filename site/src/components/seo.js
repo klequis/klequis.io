@@ -10,8 +10,8 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title, ogimage }) {
-  console.log('SEO:ogimage', ogimage)
+function SEO({ description, lang, meta, title, ogImage, ogUrl, ogType, ogPublishedTime }) {
+  console.log('SEO:ogtype', ogType)
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -26,6 +26,8 @@ function SEO({ description, lang, meta, title, ogimage }) {
     `
   )
 
+
+
   const metaDescription = description || site.siteMetadata.description
 
   return (
@@ -38,8 +40,24 @@ function SEO({ description, lang, meta, title, ogimage }) {
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
+          name: `og:site_name`,
+          content: "klequis' blog"
+        },
+        {
+          name: `og:article:published_time`,
+          content: new Date(ogPublishedTime).toISOString
+        },
+        // {
+        //   name: `og:article:modified_time`,
+        //   content: new Date().toISOString
+        // },
+        {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          property: `og:url`,
+          content: ogUrl,
         },
         {
           property: `og:title`,
@@ -49,13 +67,22 @@ function SEO({ description, lang, meta, title, ogimage }) {
           property: `og:description`,
           content: metaDescription,
         },
+        // assums that if type is not specified it is the home page
         {
           property: `og:type`,
-          content: `website`,
+          content: ogType || `website`,
         },
         {
           property: `og:image`,
-          content: ogimage,
+          content: ogImage,
+        },
+        {
+          property: `og:image:width`,
+          content: "590",
+        },
+        {
+          property: `og:image:height`,
+          content: "286",
         },
         {
           name: `twitter:card`,

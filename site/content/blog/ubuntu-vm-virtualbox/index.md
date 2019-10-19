@@ -2,7 +2,7 @@
 title: Building a Ubuntu Desktop Virtual Machine with VirtualBox
 date: '2019-09-27'
 description: Ubuntu is free!
-ogimage: vm-showit.png
+ogimage: https://res.cloudinary.com/klequis/image/upload/v1571407010/hero-post_vrrx1y.png
 ---
 
 ![banner](hero-blog.png)
