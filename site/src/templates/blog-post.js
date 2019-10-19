@@ -14,7 +14,13 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     // console.log('props', this.props)
-    // console.log('frontmatter', post.frontmatter)
+    console.log('frontmatter', post.frontmatter)
+    const pubDate = post.frontmatter.date
+    const frontMatterDate = pubDate ? new Date(pubDate).toISOString() : ''
+    const modDate = post.frontmatter.updated_date
+    const frontMatterModifiedDate = modDate ? new Date(modDate).toISOString() : ''
+
+
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -24,7 +30,9 @@ class BlogPostTemplate extends React.Component {
           ogimage={post.frontmatter.ogimage}
           ogurl={href}
           ogtype='article'
-          ogdate={post.frontmatter.date}
+          ogdate={frontMatterDate}
+          ogModified={post.frontmatter.updated_date}
+
         />
         <h1>{post.frontmatter.title}</h1>
         <p

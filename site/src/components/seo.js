@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title, ogImage, ogUrl, ogType, ogPublishedTime }) {
+function SEO({ description, lang, meta, title, ogImage, ogUrl, ogType, ogPublishedTime, ogModified }) {
   console.log('SEO:ogtype', ogType)
   const { site } = useStaticQuery(
     graphql`
@@ -29,6 +29,10 @@ function SEO({ description, lang, meta, title, ogImage, ogUrl, ogType, ogPublish
 
 
   const metaDescription = description || site.siteMetadata.description
+  // console.log('title', title)
+  // console.log('ogPublishedTime', ogPublishedTime)
+  // const publishedTime = ogPublishedTime ? new Date(ogPublishedTime).toISOString() : ''
+
 
   return (
     <Helmet
@@ -45,12 +49,12 @@ function SEO({ description, lang, meta, title, ogImage, ogUrl, ogType, ogPublish
         },
         {
           name: `og:article:published_time`,
-          content: new Date(ogPublishedTime).toISOString
+          content: ogPublishedTime
         },
-        // {
-        //   name: `og:article:modified_time`,
-        //   content: new Date().toISOString
-        // },
+        {
+          name: `og:article:modified_time`,
+          content: new Date(ogModified).toISOString
+        },
         {
           name: `description`,
           content: metaDescription,

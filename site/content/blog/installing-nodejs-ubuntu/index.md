@@ -3,6 +3,7 @@ title: Installing NodeJS on Ubuntu
 date: '2019-10-14'
 description: Quick & Easy.
 ogimage:  node-showit.png
+updated_date: '2019-10-19'
 ---
 
 If your a JavaScript developer you are familiar with [Node](https://nodejs.org/en/) and and already know how to install it on a Mac or Windows machine. If you are new to Ubuntu, here is the quick and easy way to install NodeJS.
@@ -34,7 +35,7 @@ sudo apt-get install curl
 
 ## Installing Node
 
-This process will download a setup script to the current directory. Change directory to a suitible location such as Downloads
+This process will download a setup script to the current directory. Change directory to a suitable location such as Downloads
 
 ```console
 cd Downloads
@@ -46,25 +47,33 @@ Download the node setup script.
 curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
 ```
 
-Execute the setup script.
+The next step is to execute the script just downloaded. Note that the script does not install Node. It only sets up you machine so that Node can be installed.
+
 ```console
 sudo bash nodesource_setup.sh
 ```
 
-Install Node.
+Now check your Node version to confirm installation.
+
 ```console
 sudo apt-get install -y nodejs
 ```
 
 Check that Node is installed.
+
 ```console
 nodejs -v
 ```
 
-**You're all done!**
+Installing Node also installed npm. Check the npm version with this command.
 
+```console
+npm -v
+```
 
+<img src='finish-flag.svg' width=200>
 
+> That's it. NodeJS & npm are now installed and ready to use
 
 ## References
 
