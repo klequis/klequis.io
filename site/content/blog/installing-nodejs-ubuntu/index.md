@@ -1,9 +1,9 @@
 ---
-title: Installing NodeJS on Ubuntu
-date: '2019-10-14'
 description: Quick & Easy.
-ogimage:  node-showit.png
-updated_date: '2019-10-19'
+modifiedDate: '2019-10-19'
+previewImage:  node-showit.png
+publishedDate: '2019-10-14'
+title: Installing NodeJS on Ubuntu
 ---
 
 If your a JavaScript developer you are familiar with [Node](https://nodejs.org/en/) and and already know how to install it on a Mac or Windows machine. If you are new to Ubuntu, here is the quick and easy way to install NodeJS.

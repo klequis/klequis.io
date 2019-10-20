@@ -1,8 +1,9 @@
 ---
-title: Installing FireFox Developer Edition on Ubuntu
-date: '2019-10-14'
 description: Quick & Easy.
-ogimage: firefox-showit.png
+modifiedDate: ''
+previewImage: firefox-showit.png
+publishedDate: '2019-10-14'
+title: Installing FireFox Developer Edition on Ubuntu
 ---
 
 [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) contains features not currently released to the regular version of Firefox. Its main attraction to me is Mozilla's respect for my privacy and having an additional browser to segregate my life into. I use Firefox for my personal life and Firefox Developer Edition for work related accounts and activity. However, using the Webpack Dev Server I find that Firefox Developer Edition consumes increasing amounts of memory until my machine freezes. Therefore I also use Chrome for development. However, I often turn to Firefox Developer Edition for inspecting pages.

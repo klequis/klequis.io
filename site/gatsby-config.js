@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: "klequis' blog",
     author: "klequis",
-    description: "Description in gatsby-config.js.",
+    description: "A blog on software development.",
     siteUrl: "https://klequis.io",
     social: {
       twitter: "at_klequis",
@@ -59,11 +59,11 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Gatsby Starter Blog",
-        short_name: "GatsbyJS",
+        name: "klequis' blog",
+        short_name: "klequis blog",
         start_url: "/",
         background_color: "#ffffff",
-        theme_color: "#ffa7c4",
+        theme_color: "#1ca086",
         display: "minimal-ui",
         icon: "content/assets/cb.png",
       },

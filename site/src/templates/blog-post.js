@@ -15,24 +15,24 @@ class BlogPostTemplate extends React.Component {
 
     // console.log('props', this.props)
     console.log('frontmatter', post.frontmatter)
-    const pubDate = post.frontmatter.date
-    const frontMatterDate = pubDate ? new Date(pubDate).toISOString() : ''
-    const modDate = post.frontmatter.updated_date
-    const frontMatterModifiedDate = modDate ? new Date(modDate).toISOString() : ''
-
-
+    const publishedDate = new Date(post.frontmatter.publishedDate).toISOString()
+    const modDate = post.frontmatter.modifiedDate
+    
+    
+    const modifiedDate = modDate ? new Date(modDate).toISOString() : ''
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title={post.frontmatter.title}
+          article={true}
           description={post.frontmatter.description || post.excerpt}
-          ogimage={post.frontmatter.ogimage}
-          ogurl={href}
-          ogtype='article'
-          ogdate={frontMatterDate}
-          ogModified={post.frontmatter.updated_date}
-
+          modifiedDate={modifiedDate}
+          pageType='article'
+          pageUrl={href}
+          previewImage={post.frontmatter.previewImage}
+          modifiedDate={modifiedDate}
+          publishedDate={publishedDate}
+          title={post.frontmatter.title}
         />
         <h1>{post.frontmatter.title}</h1>
         <p
@@ -43,7 +43,7 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-1),
           }}
         >
-          {post.frontmatter.date}
+          {post.frontmatter.publishedDate}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
@@ -98,9 +98,9 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        publishedDate(formatString: "MMMM DD, YYYY")
         description
-        ogimage
+        previewImage
       }
     }
   }

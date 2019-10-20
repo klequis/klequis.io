@@ -1,8 +1,9 @@
 ---
-title: Error ENOSPC System limit for number of file watchers reached
-date: '2019-10-15'
 description: Quick fix to an unexpected problem.
-ogimage: enospc-showit.png
+modifiedDate: ''
+previewImage: ''
+publishedDate: '2019-10-15'
+title: Error ENOSPC System limit for number of file watchers reached
 ---
 
 I rebuilt my machine a few days ago and today got an error message I have nevers seen before.

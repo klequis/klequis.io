@@ -13,14 +13,16 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges
 
     // console.log('posts', posts)
+    // console.log('pages.index: props', this.props);
+    
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <Bio />
         {posts.map(({ node }) => {
+          console.log('node', node)
           const title = node.frontmatter.title || node.fields.slug
-          // console.log('node.frontmatter', node.frontmatter.ogimage)
           return (
             <div key={node.fields.slug}>
               <h3
@@ -32,7 +34,13 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <small>
+              {node.frontmatter.publishedDate}
+              {
+                node.frontmatter.modifiedDate
+              }
+              updated: {node.frontmatter.modifiedDate}
+              </small>
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
@@ -55,7 +63,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___publishedDate], order: DESC }) {
       edges {
         node {
           excerpt
@@ -63,7 +71,8 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            publishedDate(formatString: "MMMM DD, YYYY")
+            modifiedDate(formatString: "MMMM DD, YYYY")
             title
             description
           }
