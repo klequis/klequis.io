@@ -21,7 +21,7 @@ class BlogIndex extends React.Component {
         <SEO title="All posts" />
         <Bio />
         {posts.map(({ node }) => {
-          console.log('node', node)
+          // console.log('node', node)
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug}>

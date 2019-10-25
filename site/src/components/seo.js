@@ -10,20 +10,17 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = (
-  {
-    article = false,
-    description,
-    lang,
-    meta,
-    modifiedDate,
-    pageUrl,
-    previewImage,
-    publishedDate,
-    title,
-  },
-  
-) => {
+const SEO = ({
+  article = false,
+  description,
+  lang,
+  meta,
+  modifiedDate,
+  pageUrl,
+  previewImage,
+  publishedDate,
+  title,
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -32,18 +29,91 @@ const SEO = (
             title
             description
             author
+            siteUrl
           }
         }
       }
     `
   )
-  console.log('title', title);
-  
-  console.log('seo.modifiedDate', modifiedDate);
-  
-  
 
   const metaDescription = description || site.siteMetadata.description
+  
+  const ogUrl = pageUrl || site.siteMetadata.siteUrl
+  
+  
+  const commonMeta = [
+    {
+      name: `description`,
+      content: metaDescription,
+    },
+    {
+      name: `og:site_name`,
+      content: "klequis' blog",
+    },
+    {
+      property: `og:title`,
+      content: title,
+    },
+    {
+      property: `og:description`,
+      content: metaDescription,
+    },
+    {
+      // assumes that if type is not specified it is the home page
+      property: `og:type`,
+      content: article ? "article" : `website`,
+    },
+    {
+      property: `og:url`,
+      content: ogUrl,
+    },
+    {
+      name: `twitter:card`,
+      content: `summary`,
+    },
+    {
+      name: `twitter:creator`,
+      content: `at_klequis`,
+    },
+    {
+      name: `twitter:description`,
+      content: metaDescription,
+    },
+    {
+      name: `twitter:title`,
+      content: title,
+    },
+  ]
+
+  const articleMeta = [
+    {
+      name: `og:article:author`,
+      content: `Carl Becker (klequis)`,
+    },
+    {
+      name: `og:article:published_time`,
+      content: publishedDate,
+    },
+    {
+      name: `og:article:modified_time`,
+      content: modifiedDate,
+    },
+
+    {
+      property: `og:image`,
+      content: previewImage,
+    },
+    {
+      property: `og:image:height`,
+      content: "286",
+    },
+    {
+      property: `og:image:width`,
+      content: "590",
+    },
+  ]
+
+  const allMeta = article ? [...commonMeta, ...articleMeta] :  [...commonMeta]
 
   return (
     <Helmet
@@ -52,73 +122,7 @@ const SEO = (
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          name: `og:article:published_time`,
-          content: publishedDate,
-        },
-        {
-          name: `og:article:modified_time`,
-          content: modifiedDate
-        },
-        {
-          name: `og:site_name`,
-          content: "klequis' blog",
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:image`,
-          content: previewImage,
-        },
-        {
-          property: `og:image:height`,
-          content: "286",
-        },
-        {
-          property: `og:image:width`,
-          content: "590",
-        },
-        {
-          // assumes that if type is not specified it is the home page
-          property: `og:type`,
-          content: article ? 'article' : `website`,
-        },
-        {
-          property: `og:url`,
-          content: pageUrl,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-      ].concat(meta)}
+      meta={allMeta.concat(meta)}
     />
   )
 }

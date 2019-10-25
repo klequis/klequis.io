@@ -26,7 +26,6 @@ class BlogPostTemplate extends React.Component {
         <SEO
           article={true}
           description={post.frontmatter.description || post.excerpt}
-          modifiedDate={modifiedDate}
           pageType='article'
           pageUrl={href}
           previewImage={post.frontmatter.previewImage}
