@@ -1,5 +1,5 @@
 ---
-description: It might not be what you think.
+description: I'm not the only one who made an incorrect assumption about MongoDB's `ObjectID.isValid()` function.
 modifiedDate:  ''
 previewImage: mongo-showit.md
 publishedDate: '2019-05-24'

@@ -1,5 +1,5 @@
 ---
-description: Quick & Easy.
+description: Installing Firefox Developer Edition on Ubuntu is quick & easy.
 modifiedDate: ''
 previewImage: firefox-showit.png
 publishedDate: '2019-10-14'

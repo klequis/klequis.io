@@ -1,5 +1,5 @@
 ---
-description: Quick fix to an unexpected problem.
+description: Quick fix to an unexpected limit on files watch.
 modifiedDate: ''
 previewImage: ''
 publishedDate: '2019-10-15'
