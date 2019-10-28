@@ -5,15 +5,19 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import isDate from 'date-fns/isDate'
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
+    
 
-    // console.log('posts', posts)
-    // console.log('pages.index: props', this.props);
+    
+    
+    
+    
     
 
     return (
@@ -21,8 +25,13 @@ class BlogIndex extends React.Component {
         <SEO title="All posts" />
         <Bio />
         {posts.map(({ node }) => {
-          // console.log('node', node)
           const title = node.frontmatter.title || node.fields.slug
+
+          // If the date in the article's frontmatter is not valid such as ''
+          // GraphQL will return 'Invalid date' and date-fns/isDate will return 
+          // true if you do isDate(new Date(modifiedDate)) where modifiedDate = 'Invalid Date'
+          const modifiedDate = node.frontmatter.modifiedDate
+          console.log('***isDate', isDate(new Date(modifiedDate)))
           return (
             <div key={node.fields.slug}>
               <h3
@@ -37,9 +46,11 @@ class BlogIndex extends React.Component {
               <small>
               {node.frontmatter.publishedDate}
               {
-                node.frontmatter.modifiedDate
+                // see note above
+                isDate(new Date(modifiedDate)) && modifiedDate !== 'Invalid date' ? `updated: ${modifiedDate}` : ''
               }
-              updated: {node.frontmatter.modifiedDate}
+              
+              
               </small>
               <p
                 dangerouslySetInnerHTML={{

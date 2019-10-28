@@ -55,19 +55,7 @@ module.exports = {
         trackingId: "UA-83381302-1",
       },
     },
-    "gatsby-plugin-feed",
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        name: "klequis' blog",
-        short_name: "klequis blog",
-        start_url: "/",
-        background_color: "#ffffff",
-        theme_color: "#1ca086",
-        display: "minimal-ui",
-        icon: "content/assets/cb.png",
-      },
-    },
+    
     "gatsby-plugin-offline",
     "gatsby-plugin-react-helmet",
     {
