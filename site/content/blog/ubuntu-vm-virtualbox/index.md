@@ -369,7 +369,7 @@ Finally, my keyboard has only one Windows key and it is on the right side. Ubunt
 <br />
 <br />
 
-<img src='finish-flag.svg' width=200>
+<img src='../../assets/finish-flag.svg' width=200>
 
 
 > That's it. Your Ubuntu VM is ready to go!
