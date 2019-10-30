@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -13,20 +12,19 @@ class BlogPostTemplate extends React.Component {
     const href = this.props.location.href
     const { previous, next } = this.props.pageContext
 
-    // console.log('props', this.props)
-    console.log('frontmatter', post.frontmatter)
     const publishedDate = new Date(post.frontmatter.publishedDate).toISOString()
     const modDate = post.frontmatter.modifiedDate
-    
-    
-    const modifiedDate = modDate ? new Date(modDate).toISOString() : ''
+    const modifiedDate =
+      modDate.toLowerCase() !== "invalid date"
+        ? new Date(modDate).toISOString()
+        : ""
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           article={true}
           description={post.frontmatter.description || post.excerpt}
-          pageType='article'
+          pageType="article"
           pageUrl={href}
           previewImage={post.frontmatter.previewImage}
           modifiedDate={modifiedDate}
@@ -98,6 +96,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         publishedDate(formatString: "MMMM DD, YYYY")
+        modifiedDate(formatString: "MMMM DD, YYYY")
         description
         previewImage
       }

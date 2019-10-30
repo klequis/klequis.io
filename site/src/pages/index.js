@@ -5,20 +5,13 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
-import isDate from 'date-fns/isDate'
+import isDate from "date-fns/isDate"
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
-    
-
-    
-    
-    
-    
-    
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -28,10 +21,10 @@ class BlogIndex extends React.Component {
           const title = node.frontmatter.title || node.fields.slug
 
           // If the date in the article's frontmatter is not valid such as ''
-          // GraphQL will return 'Invalid date' and date-fns/isDate will return 
+          // GraphQL will return 'Invalid date' and date-fns/isDate will return
           // true if you do isDate(new Date(modifiedDate)) where modifiedDate = 'Invalid Date'
           const modifiedDate = node.frontmatter.modifiedDate
-          console.log('***isDate', isDate(new Date(modifiedDate)))
+
           return (
             <div key={node.fields.slug}>
               <h3
@@ -44,13 +37,12 @@ class BlogIndex extends React.Component {
                 </Link>
               </h3>
               <small>
-              {node.frontmatter.publishedDate}
-              {
-                // see note above
-                isDate(new Date(modifiedDate)) && modifiedDate !== 'Invalid date' ? `updated: ${modifiedDate}` : ''
-              }
-              
-              
+                {node.frontmatter.publishedDate}
+                {// see note above
+                isDate(new Date(modifiedDate)) &&
+                modifiedDate !== "Invalid date"
+                  ? ` - updated: ${modifiedDate}`
+                  : ""}
               </small>
               <p
                 dangerouslySetInnerHTML={{
@@ -74,7 +66,9 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___publishedDate], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___publishedDate], order: DESC }
+    ) {
       edges {
         node {
           excerpt
