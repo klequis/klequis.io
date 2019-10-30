@@ -6,7 +6,7 @@ publishedDate: '2019-09-27'
 title: Building a Ubuntu Desktop Virtual Machine with VirtualBox
 ---
 
-![banner](hero-blog.png)
+![banner](media/hero-blog.png)
 
 
 There are many reasons why you may want to build a Linux virtual machine. For me, as an employee of large corporations I was a Windows user for nearly 15 years and used mostly Microsoft development tools. When I left the corportate world and started using non-Microsoft tools I quickly realized that most 'how to' information on the web was for Mac or Linux. I either had to search harder to find Windows information or spend time figuring it out. Not wanting to buy a Mac at that point I tried Linux and have been using it for the past five years. While I originally used Ubuntu in a virtual machine, I eventually removed Windows and installed Ubuntu. I have Windows as a virtual machine because I love Microsoft Excel.
@@ -60,10 +60,10 @@ Go to the [VirtualBox download page](https://www.virtualbox.org/wiki/Downloads) 
 - Open VirtualBox
 - Select Machine > New
 
-![VirtualBox Initial Launch](virtualbox-initial-launch.png)
+![VirtualBox Initial Launch](media/virtualbox-initial-launch.png)
 
 <div style='text-align: center'>
-<img src='virtualbox-initial-launch.png' style='max-width: 600px'>
+<img src='media/virtualbox-initial-launch.png' style='max-width: 600px'>
 </div>
 
 
@@ -74,32 +74,32 @@ Go to the [VirtualBox download page](https://www.virtualbox.org/wiki/Downloads) 
   - Version: Ubuntu (64-bit)
   - Click Next
 
-![Name and operating system](name-and-operating-system.png)
+![Name and operating system](media/name-and-operating-system.png)
 
 ### Memory Size
   How much memory you allocate to the guest machine depends on how much memory you have on the host and what you will be doing with the VM. With 16 GB on my host I allocate 6 GB to the guest and can do software development with MongoDB running locally. I haven't experimented but my guess is 4 GB is enough.
   - Enter the memory in MB (e.g., 6 * 1024 MB = 6144 or 6 GB)
   - Click Next
 
-![Memory size](memory-size.png)
+![Memory size](media/memory-size.png)
 
 ### Hard disk
   - Use the default: 'Create a virtual hard disk now'
   - Click Create
 
-![Hard disk](hard-disk.png)
+![Hard disk](media/hard-disk.png)
 
 ### Hard disk file type
   - Use the default: 'VDI (VirtualBox Disk Image)'
   - Click Next
 
-![Hard disk file type](hard-disk-file-type.png)
+![Hard disk file type](media/hard-disk-file-type.png)
 
 ### Storage and physical hard disk
   - Use the default 'Dynamically allocated'
   - Click Next
 
-      ![Storage on physical hard disk](storage-on-physical-hard-disk.png)
+      ![Storage on physical hard disk](media/storage-on-physical-hard-disk.png)
 
 ### File location and size
   'Dynamically allocated', chosen in the previous step, means the file size of the VM's hard drive will start at the minimum needed and grow as necessary up to the size you set in the current screen. This means you could enter 100 GB here and the initial size will still be under 3 GB. Setting 100 GB here means the VM's hard drive cannot grow larger than 100 GB. I recommend putting in a large number, but something significantly less then the available space on your host's hard drive.
@@ -107,7 +107,7 @@ Go to the [VirtualBox download page](https://www.virtualbox.org/wiki/Downloads) 
   - Enter a size (eg. 100.00 GB)
   - Click Create
 
-![File location and size](file-location-and-size.png)
+![File location and size](media/file-location-and-size.png)
 
 You now have a VM without an operating system. Essentially, it is a computer waiting to have an operating system installed.
 
@@ -117,20 +117,20 @@ A few changes will give you a better VM experience.
 
 Right-click the new VM and select 'Settings...'
 
-![click settings](click-settings.png)
+![click settings](media/click-settings.png)
 
 ### General > Advanced 
 - Set both 'Shared Clipboard' and 'Drag'n'Drop' to 'Bidirectional'
 
 This will allow you to copy and paste between the host and guest machines and greatly simplify your workflow.
 
-![general advanced](general-advanced.png)
+![general advanced](media/general-advanced.png)
 
 ### System > Processor
 
 By default the VM was given one processor. For my machine it says I have 8 CPUs. I actually have 4 cores with 2 threads per core. 2 CPUs is plenty, but feel free to experiment with more.
 
-![system processor](system-processor.png)
+![system processor](media/system-processor.png)
 
 ### Display > Screen
 
@@ -140,30 +140,30 @@ By default the VM was given one processor. For my machine it says I have 8 CPUs.
 
 > You can also use multiple monitors with the VM. Leave it at one for now.
 
-![display screen](display-screen.png)
+![display screen](media/display-screen.png)
 
 ## Installing the OS
 
 - In the left pane, double click the the VM you just created or right-click it and click Start
 
-![VM in left hand pane](vm-created.png)
+![VM in left hand pane](media/vm-created.png)
 
 ### Select start-up disk
 - Click the folder icon and navigate to the ubuntu ISO file you downloaded
 - Click Start
 
-![Select a start-up disk](select-start-up-disk.png)
+![Select a start-up disk](media/select-start-up-disk.png)
 
 ### Welecome
 - Choose a language
 - Click Install Ubuntu
 
-![welcome screen](welcome.png)
+![welcome screen](media/welcome.png)
 
 ### Keyboard layout
 - Select your desired keyboard layout and click Continue
 
-![keyboard layout](keyboard-layout.png)
+![keyboard layout](media/keyboard-layout.png)
 
 ### Updates and other software
 'Normal installation' will give you a full featured desktop experience with word processor, spreasheet, media player and much more. 'Minimal installation' is, well, fewer applications but perfectly good for software development. If you are curious about the full Ubuntu experience, choose 'Normal installation'. If you want to save space choose 'Minimal installation'. You can always install additional software later.
@@ -178,24 +178,24 @@ With Ubuntu 16.04, the previous long term release, I experienced the build hangi
 - Check 'Install third-party software for graphics and Wi-Fi hardware and additional media formats'
 - Click Continue
 
-![updates and other software](updates-and-other-software.png)
+![updates and other software](media/updates-and-other-software.png)
 
 ### Installation type
 - Take the defaults
 - Click Install Now
 
-![installation type](installation-type.png)
+![installation type](media/installation-type.png)
 
 ### Write the changes to disks?
 - Click Continue
 
-![Write the changes to disk](write-the-changes-to-disk.png)
+![Write the changes to disk](media/write-the-changes-to-disk.png)
 
 ### Where are you?
 - Select your timezone
 - Click Continue
 
-![where are you](where-are-you.png)
+![where are you](media/where-are-you.png)
 
 
 ### Who are you?
@@ -209,18 +209,16 @@ With Ubuntu 16.04, the previous long term release, I experienced the build hangi
 
 > NOTE: By default, the VM will not accept any incoming requests/conections. I also have a firewall on my host and, no surprise, my local network is behind a router. Additionally, if the host is locked, no one can log into the guest without the host password. Given all of that, I choose the convenience of using a short 4 character not so secret password, as well as 'Log in automatically'.
 
-![Who are you](who-are-you.png)
-
-
+![Who are you](media/who-are-you.png)
 
 ### Installation will now begin.
 
 Ubuntu doesn't take very long to install but you likely have time to make a cup of coffee or tea.
 
-![welcome to ubuntu](welcome-to-ubuntu.png)
+![welcome to ubuntu](media/welcome-to-ubuntu.png)
 
 Time for a break
-![coffee break](coffee.gif)
+![coffee break](media/coffee.gif)
 
 <br />
 <hr />
@@ -232,14 +230,14 @@ The installation of Ubuntu is compelte.
 
 - Click Restart Now
 
-![installation complete](installation-copmplete.png)
+![installation complete](media/installation-copmplete.png)
 
 
 ### Press Enter
 
 You can ignore the message about removing the installation media. Ubuntu doesn't know you are installing it as a virtual machine. It thinks it is being installed from a media such as CD, DVD or USB drive. In our case, just press Enter.
 
-![press-enter](press-enter.png)
+![press-enter](media/press-enter.png)
 
 ##  Software updates
 
@@ -247,13 +245,13 @@ At some point soon after installation, you will soon see a message from the Ubun
 
 > Ubuntu updates are very painless. Other than this initial update, they are usually quick and mostly don't require a restart. I have never had a problem with an update.
 
-![software-updater](software-updater.png)
+![software-updater](media/software-updater.png)
 
 ## All Done? Not Quite.
 
 You now have a Ubuntu Virtual Machine but need to install VirtualBox 'Guest Additions' which will add crutial features to the VM. The most noticable of these is that the virtual machine will display full-screen instead of the small box you have seen so far.
 
-![all done](all-done.png)
+![all done](media/all-done.png)
   
 # Install Guest Additions
 
@@ -269,15 +267,15 @@ sudo apt install build-essential
 
 From the VirtualBox menu select 'Insert Guest Additions CD image...'
 
-![insert guest additions cd image](insert-guest-additions-cd-image.png)
+![insert guest additions cd image](media/insert-guest-additions-cd-image.png)
 
 Click Run
 
-![do you want to run guest additions](do-you-want-to-run-ga.png)
+![do you want to run guest additions](media/do-you-want-to-run-ga.png)
 
 You will be asked to enter the current user's password.
 
-![authentication required](authentication-required.png)
+![authentication required](media/authentication-required.png)
 
 
 When guest additions is done installing close the terminal and retart the VM.
@@ -326,14 +324,14 @@ Then go back to the VirtualBox Manager:
 - On the right side of the dialog, click the folder with the '+' sign.
 
 
-![add shared folder](add-shared-folder.png)
+![add shared folder](media/add-shared-folder.png)
 
 In the Add Share dialog:
 - Choose the folder on your host machine you want to share. I simple share my home folder
 - By default the folder name will be the name of the folder you choose. You can change it if you want
 - **Auto-mount** will make sure the shared folder is available when the VM is started
 
-![add share](add-share.png)
+![add share](media/add-share.png)
 
 - Click OK
 - Click OK in the Shared Folders dialog
