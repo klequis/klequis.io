@@ -9,7 +9,8 @@ title: Error ENOSPC System limit for number of file watchers reached
 I rebuilt my machine a few days ago and today got an error message I have nevers seen before.
 
 ```console
-Error: ENOSPC: System limit for number of file watchers reached, watch '/home/.../site/src/components/layout.js'
+Error: ENOSPC: System limit for number of file watchers reached, 
+watch '/home/.../site/src/components/layout.js'
 ```
 
 It turns out that the maximum number of files the system can monitor had been reached. Since I am not working on a project larger than I have in the past I not sure why this happened. It turns out that the limit was 8,192, which is fairly low for a software developer. Fortunately, it is easy to increase the limit.
