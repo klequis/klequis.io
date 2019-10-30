@@ -55,13 +55,19 @@ cat /proc/sys/fs/inotify/max_user_watches
 
 ```
 
+<br />
+<br />
+
+<img src='../../assets/hammer.svg' width=200>
+
+
 **Yeah, problem solved!!**
 
 
 
 ## References
 
-- [Increasing the amout of inotify watchers](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers#the-technical-details)
+- [Increasing the amount of inotify watchers](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers#the-technical-details)
 - [Error: ENOSPC: System limit for number of file watchers reached, watch '/home/foldername/abcrypto/static' #11406](https://github.com/gatsbyjs/gatsby/issues/11406)
 
 
