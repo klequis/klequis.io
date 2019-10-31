@@ -1,27 +1,27 @@
 ---
-description: Installing Nodmon on Ubuntu is just one command.
+description: Blog articles (and maybe a book) for learning full-stack development with MogoDB, Express, React & Node.
 modifiedDate: ''
 previewImage: 
-publishedDate: '2019-10-30'
+publishedDate: '2019-09-25'
 title: Full-Stack MERN Development
 ---
 
 Last spring I started writing a book about full-stack MERN development. I made a great deal of progress but then other priorities took over and progress on the book has been slow. I have since decided to work on it in small chunks and post them as articles on [my blog](https://klequis.io).
 
-The genesis of the book comes from the two-hundred or so people I met from holding 177 [TriValley Coders](http://www.trivalleycoders.org/) meetings over the past three years. During this time I met new and experienced software developers seeing to add new skills in order to find a new, better or first software developer job. 
+The genesis of the book comes from the two-hundred or so people I met from holding 177 [TriValley Coders](http://www.trivalleycoders.org/) meetings over the past three years. During this time I met new and experienced software developers seeking to add new skills in order to find a new, better or first software developer job. 
 
 Often, people had learned a lot about one or more subjects but they often had two difficulties: 1) starting a project from scratch & 2) putting all the moving pieces together into a deployable application.
 
-The book intends to address these two difficulties. As a result it is broad in scope and very 'how to' focused. What there are lots of tidbits for beginners and detailed instructions on how to accomplish each task, it is aimed at intermediate level developers who already know JavaScript, HTML, CSS & a little React.
+The book intends to address these two difficulties. As a result it is broad in scope and very 'how to' focused. While there are lots of tidbits for beginners and detailed instructions on how to accomplish each task, the book/articles are aimed at developers who already know JavaScript, HTML, CSS & a little React.
 
 Below is the current outline with links to articles already published.
 
 1. Introduction
 2. Setup
   1. Get a Domain
-  2. Build an Ubuntu Virtual Machine
+  2. [Build an Ubuntu Virtual Machine](https://klequis.io/ubuntu-vm-virtualbox/)
   3. Development Machine Setup
-    1. Install NodeJS
+    1. [Install NodeJS](https://klequis.io/installing-nodejs-ubuntu/)
     2. Install Git
     3. Install nodemon
     4. Install VS Code & Extensions

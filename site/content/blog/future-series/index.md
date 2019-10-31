@@ -1,10 +1,12 @@
 ---
 description: Installing Nodmon on Ubuntu is just one command.
 modifiedDate: ''
+partOfBook: true
 previewImage: 
 publishedDate: '2019-10-30'
 title: Installing Nodemon on Ubuntu
 ---
+
 
 
 hit save, restarts server
