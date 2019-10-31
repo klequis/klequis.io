@@ -49,8 +49,12 @@ Comment=Firefox Developer Edition Web Browser.
 
 Save the file and launch Firefox Developer Edition
 
+<br />
+<br />
+
 **You're all done!**
 
+<img src='../../assets/finish-flag.svg' width=200>
 
 ---
 
