@@ -23,7 +23,7 @@ const blockQuoteStyle = {
 function PartOfBook() {
   return (
     <div style={blockQuoteStyle}>
-        <p>Part of a book</p>
+        <p>This article is <a src='https://klequis.io/full-stack-mern-development-series'>part of a series of articles</a> on full-stack MERN (MongoDB, Express, React & Node) development. For the full series see <a src='https://klequis.io/full-stack-mern-development-series'>Full-stack Mern Development</a>.</p>
     </div>
   )
 }
