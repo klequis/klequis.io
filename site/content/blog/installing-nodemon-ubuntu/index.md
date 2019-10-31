@@ -3,19 +3,19 @@ description: Installing Nodmon on Ubuntu is just one command.
 modifiedDate: ''
 previewImage: 
 publishedDate: '2019-10-30'
-title: Installing Nodemon on Ubuntu
+title: Full-Stack MERN Development
 ---
 
 
-## Introduction
-## Setup
-### Get a Domain
-### Build a Ubuntu Virtual Machine
-### Development Machine Setup
-#### Install NodeJS
-#### Install Git
-#### Install nodemon
-#### Install VS Code & Extensions
-#### Install MongoDB
-#### Install Robo3T
+1. Introduction
+2. Setup
+  1. ### Get a Domain
+  2. Build a Ubuntu Virtual Machine
+  3. Development Machine Setup
+    1. Install NodeJS
+    2. Install Git
+    3. Install nodemon
+    4. Install VS Code & Extensions
+    5. Install MongoDB
+    6. Install Robo3T
 
