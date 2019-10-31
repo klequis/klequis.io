@@ -73,7 +73,7 @@ npm -v
 
 <img src='../../assets/finish-flag.svg' width=200>
 
-> That's it. NodeJS & npm are now installed and ready to use
+> That's it. NodeJS & npm are now installed and ready to use.
 
 ## References
 
