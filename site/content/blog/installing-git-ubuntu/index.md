@@ -1,6 +1,7 @@
 ---
 description: Installing Git on Ubuntu is also quick & easy.
 modifiedDate: ''
+partOfBook: true
 previewImage: 
 publishedDate: '2019-10-30'
 title: Installing Git on Ubuntu

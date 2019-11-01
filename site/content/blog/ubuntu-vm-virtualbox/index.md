@@ -1,6 +1,7 @@
 ---
 description: There are many reasons to try Linux. Installing it in a virtual machine is a risk free and $$ free way to get started.
 modifiedDate: ''
+partOfBook: true
 previewImage: https://res.cloudinary.com/klequis/image/upload/v1571407010/hero-post_vrrx1y.png
 publishedDate: '2019-09-27'
 title: Building a Ubuntu Desktop Virtual Machine with VirtualBox

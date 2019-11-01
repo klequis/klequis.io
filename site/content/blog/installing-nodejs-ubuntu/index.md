@@ -1,6 +1,7 @@
 ---
 description: There are several ways to install Node on Ubuntu. Here is the quick and easy way to get the latest version of Node installed.
 modifiedDate: '2019-10-19'
+partOfBook: true
 previewImage:  node-showit.png
 publishedDate: '2019-10-14'
 title: Installing NodeJS on Ubuntu
