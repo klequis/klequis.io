@@ -50,8 +50,12 @@ git config --global user.name "your-name"
 git config --global user.email "you@email.com"
 ```
 
-**You're all done!**
 
+<br/>
+<br/>
+<img src='../../assets/finish-flag.svg' width=150>
+
+**You're all done!**
 
 ---
 

@@ -71,9 +71,13 @@ Installing Node also installed npm. Check the npm version with this command.
 npm -v
 ```
 
-<img src='../../assets/finish-flag.svg' width=200>
+<br/>
+<br/>
+<img src='../../assets/finish-flag.svg' width=150>
 
-> That's it. NodeJS & npm are now installed and ready to use.
+**That's it. NodeJS & npm are now installed and ready to use.**
+
+<br/>
 
 ## References
 
