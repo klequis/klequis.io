@@ -1,7 +1,7 @@
 ---
 description: Installing Firefox Developer Edition on Ubuntu is quick & easy.
 modifiedDate: ''
-previewImage: firefox-showit.png
+previewImage: https://res.cloudinary.com/klequis/image/upload/v1572710715/firefox-dev-edition-post_puo2bw.png
 publishedDate: '2019-10-14'
 title: Installing FireFox Developer Edition on Ubuntu
 ---
