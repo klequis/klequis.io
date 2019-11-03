@@ -43,11 +43,15 @@ const SEO = ({
   
   const commonMeta = [
     {
+      property: `fb:app_id`,
+      content: '495377417716964'
+    },
+    {
       name: `description`,
       content: metaDescription,
     },
     {
-      name: `og:site_name`,
+      property: `og:site_name`,
       content: "klequis' blog",
     },
     {
