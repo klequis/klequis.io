@@ -91,19 +91,6 @@ const SEO = ({
 
   const articleMeta = [
     {
-      name: `og:article:author`,
-      content: `Carl Becker (klequis)`,
-    },
-    {
-      name: `og:article:published_time`,
-      content: publishedDate,
-    },
-    {
-      name: `og:article:modified_time`,
-      content: modifiedDate,
-    },
-
-    {
       property: `og:image`,
       content: previewImage,
     },
@@ -115,9 +102,21 @@ const SEO = ({
       property: `og:image:width`,
       content: "590",
     },
+    {
+      name: `og:article:author`,
+      content: `Carl Becker (klequis)`,
+    },
+    {
+      name: `og:article:published_time`,
+      content: publishedDate,
+    },
+    {
+      name: `og:article:modified_time`,
+      content: modifiedDate,
+    },
   ]
 
-  const allMeta = article ? [...commonMeta, ...articleMeta] :  [...commonMeta]
+  const allMeta = article ? [...articleMeta, ...commonMeta] :  [...commonMeta]
 
   return (
     <Helmet

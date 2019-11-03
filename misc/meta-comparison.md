@@ -12,17 +12,17 @@
 
 <meta data-react-helmet="true" name="description" content="Installing Firefox Developer Edition on Ubuntu is quick &amp; easy.">
 
-<meta name="description" content="The hardest thing about React?">
+<meta                          name="description" content="The hardest thing about React?">
 
 ---
 
-## HandheldFriendly
+## HandheldFriendly (REVIEW)
 
 - NONE
 
 <meta name="HandheldFriendly" content="True">
 
-## http-equiv
+## http-equiv (REVIEW)
 
 - NONE
 
@@ -30,13 +30,13 @@
 
 ---
 
-## keywords
+## keywords (REVIEW)
 
 - NONE
 
 <meta name="keywords" content="react">
 
-## MobileOptimized
+## MobileOptimized (REVIEW)
 
 - NONE
 
@@ -91,7 +91,7 @@
 
 <meta data-react-helmet="true" property="og:description" content="Installing Firefox Developer Edition on Ubuntu is quick &amp; easy.">
 
-<meta property="og:description" content="The hardest thing about React?">
+<meta                          property="og:description" content="The hardest thing about React?">
 
 ---
 
@@ -119,7 +119,7 @@
 
 ---
 
-# og:local
+# og:local (REVIEW)
 
 - NONE
 
@@ -131,7 +131,9 @@
 
 <meta data-react-helmet="true" name="description" content="Installing Firefox Developer Edition on Ubuntu is quick &amp; easy.">
 
-<meta property="og:site_name" content="Dave Ceddia">
+<meta                          property="og:site_name" content="Dave Ceddia">
+
+Have not yet found og doc for site_name to see if it is name or property. Guess: it s/b property
 
 ---
 
@@ -139,7 +141,7 @@
 
 <meta data-react-helmet="true" property="og:title" content="Installing FireFox Developer Edition on Ubuntu">
 
-<meta property="og:title" content="Why React has been Hard to Learn">
+<meta                          property="og:title" content="Why React has been Hard to Learn">
 
 ---
 
@@ -147,7 +149,7 @@
 
 <meta data-react-helmet="true" property="og:type" content="article">
 
-<meta property="og:type" content="article">
+<meta                          property="og:type" content="article">
 
 ---
 
