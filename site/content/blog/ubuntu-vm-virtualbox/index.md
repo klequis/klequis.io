@@ -1,4 +1,5 @@
 ---
+canonical: 'https://klequis.io/ubuntu-vm-virtualbox'
 description: There are many reasons to try Linux. Installing it in a virtual machine is a risk free and $$ free way to get started.
 modifiedDate: ''
 partOfBook: true

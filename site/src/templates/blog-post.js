@@ -31,6 +31,7 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           article={true}
+          // canonical={post.frontmatter.canonical}
           description={post.frontmatter.description || post.excerpt}
           pageType="article"
           pageUrl={href}

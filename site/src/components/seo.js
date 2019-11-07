@@ -20,6 +20,7 @@ const SEO = ({
   previewImage,
   publishedDate,
   title,
+  ...rest
 }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -37,14 +38,13 @@ const SEO = ({
   )
 
   const metaDescription = description || site.siteMetadata.description
-  
+
   const ogUrl = pageUrl || site.siteMetadata.siteUrl
-  
-  
+
   const commonMeta = [
     {
       property: `fb:app_id`,
-      content: '495377417716964'
+      content: "495377417716964",
     },
     {
       name: `description`,
@@ -116,7 +116,7 @@ const SEO = ({
     },
   ]
 
-  const allMeta = article ? [...articleMeta, ...commonMeta] :  [...commonMeta]
+  const allMeta = article ? [...articleMeta, ...commonMeta] : [...commonMeta]
 
   return (
     <Helmet
@@ -125,6 +125,7 @@ const SEO = ({
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={[{ rel: "canonical", key: ogUrl, href: ogUrl }]}
       meta={allMeta.concat(meta)}
     />
   )
