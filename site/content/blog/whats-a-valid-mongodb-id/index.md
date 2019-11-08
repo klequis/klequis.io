@@ -3,6 +3,7 @@ description: I'm not the only one who made an incorrect assumption about MongoDB
 modifiedDate:  ''
 previewImage: mongo-showit.md
 publishedDate: '2019-05-24'
+slug: whats-a-valid-mongodb-id
 title: What's a Valid MongoDB ObjectID?
 ---
 

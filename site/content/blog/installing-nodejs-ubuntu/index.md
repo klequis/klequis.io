@@ -4,6 +4,7 @@ modifiedDate: '2019-10-19'
 partOfBook: true
 previewImage:  node-showit.png
 publishedDate: '2019-10-14'
+slug: installing-nodejs-ubuntu
 title: Installing NodeJS on Ubuntu
 ---
 

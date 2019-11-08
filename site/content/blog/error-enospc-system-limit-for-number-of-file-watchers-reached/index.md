@@ -3,6 +3,7 @@ description: Quick fix to an unexpected limit on files watch.
 modifiedDate: ''
 previewImage: ''
 publishedDate: '2019-10-15'
+slug: error-enospc-system-limit-for-number-of-file-watchers-reached
 title: Error ENOSPC System limit for number of file watchers reached
 ---
 

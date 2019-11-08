@@ -4,6 +4,7 @@ modifiedDate: ''
 partOfBook: true
 previewImage: 
 publishedDate: '2019-10-30'
+slug: installing-git-ubuntu
 title: Installing Git on Ubuntu
 ---
 

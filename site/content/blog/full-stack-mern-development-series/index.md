@@ -3,6 +3,7 @@ description: Blog articles (and maybe a book) for learning full-stack developmen
 modifiedDate: ""
 previewImage:
 publishedDate: "2019-09-25"
+slug: full-stack-mern-development-series
 title: Full-Stack MERN Development
 ---
 

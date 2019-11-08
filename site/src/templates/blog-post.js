@@ -31,7 +31,7 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           article={true}
-          // canonical={post.frontmatter.canonical}
+          slug={post.frontmatter.slug}
           description={post.frontmatter.description || post.excerpt}
           pageType="article"
           pageUrl={href}
@@ -109,12 +109,13 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       frontmatter {
-        title
-        publishedDate(formatString: "MMMM DD, YYYY")
-        modifiedDate(formatString: "MMMM DD, YYYY")
+        slug
         description
+        modifiedDate(formatString: "MMMM DD, YYYY")
         partOfBook
         previewImage
+        publishedDate(formatString: "MMMM DD, YYYY")
+        title
       }
     }
   }
