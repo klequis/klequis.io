@@ -10,7 +10,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
-    const href = this.props.location.href
+    const href = this.props.location.pathname
     const { previous, next } = this.props.pageContext
 
     const publishedDate = new Date(post.frontmatter.publishedDate).toISOString()
