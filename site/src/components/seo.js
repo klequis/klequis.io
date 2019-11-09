@@ -38,7 +38,7 @@ const SEO = ({
 
   const metaDescription = description || site.siteMetadata.description
   
-  const ogUrl = pageUrl || site.siteMetadata.siteUrl
+  const ogUrl = site.siteMetadata.siteUrl + pageUrl
   
   
   const commonMeta = [
