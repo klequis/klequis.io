@@ -11,6 +11,7 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-mdx`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -24,6 +25,12 @@ module.exports = {
         path: `${__dirname}/content/assets`,
         name: "assets",
       },
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/content/blog`,
+      }
     },
     {
       resolve: "gatsby-transformer-remark",
@@ -77,6 +84,6 @@ module.exports = {
         protocol: siteAddress.protocol.lastIndexOf(0, -1),
         hostname: siteAddress.hostname
       },
-    }
+    },
   ],
 }
