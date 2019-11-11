@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import isDate from "date-fns/isDate"
+import bookImage from "../../content/assets/book-3.svg"
 
 class BlogIndex extends React.Component {
   render() {
@@ -37,12 +38,49 @@ class BlogIndex extends React.Component {
               </h3>
               <small>
                 {node.frontmatter.publishedDate}
-                {// see note above
-                isDate(new Date(modifiedDate)) &&
-                modifiedDate !== "Invalid date"
-                  ? ` - updated: ${modifiedDate}`
-                  : ""}
+                {
+                  // see note above
+                  isDate(new Date(modifiedDate)) &&
+                  modifiedDate !== "Invalid date"
+                    ? ` - updated: ${modifiedDate}`
+                    : ""
+                }
               </small>
+              {
+                node.frontmatter.partOfBook
+                  ? <Link
+                      to='/full-stack-mern-development-series'
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        marginBottom: rhythm(1 / 2),
+                      }}
+                    >
+                      <img
+                        src={bookImage}
+                        alt="part of series"
+                        style={{
+                          margin: 0,
+                          maxHeight: 15,
+                        }}
+                      />
+                      <small>
+                        &nbsp; part of a series of articles
+                      </small>
+                    </Link>
+                  : null
+              }
+
+
+
+
+
+
+
+
+
+
+
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
@@ -75,10 +113,11 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            publishedDate(formatString: "MMMM DD, YYYY")
-            modifiedDate(formatString: "MMMM DD, YYYY")
-            title
             description
+            modifiedDate(formatString: "MMMM DD, YYYY")
+            partOfBook
+            publishedDate(formatString: "MMMM DD, YYYY")
+            title
           }
         }
       }

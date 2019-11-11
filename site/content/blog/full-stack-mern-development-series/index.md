@@ -1,6 +1,7 @@
 ---
 description: Blog articles (and maybe a book) for learning full-stack development with MogoDB, Express, React & Node.
 modifiedDate: ""
+partOfBook: false
 previewImage:
 publishedDate: "2019-09-25"
 slug: full-stack-mern-development-series
@@ -19,27 +20,27 @@ Below is the current outline with links to articles already published.
 
 1. Introduction
 2. Setup
-3. Get a Domain
-4. [Build an Ubuntu Virtual Machine](https://klequis.io/ubuntu-vm-virtualbox/)
-5. Development Machine Setup
-   1. [Install NodeJS](https://klequis.io/installing-nodejs-ubuntu/)
-   2. [Install Git](https://klequis.io/installing-git-ubuntu/)
-   3. [Install nodemon](https://klequis.io/installing-nodemon-ubuntu/)
-   4. Install VS Code & Extensions
-   5. Install MongoDB
-   6. Install Robo3T
-6. Express Server Part I
-   1. Introduction to Express
-   2. Using @types
-   3. Review of Packages
-   4. What's Request & Response?
-   5. Localhost
-   6. Project Structure
-   7. Routes
-   8. Methods
-   9. npx
-   10. babel-node
-7. Ubuntu Server Part I
+    1. [Get a Domain](https://klequis.io/get-a-free-domain-name/)
+    2. [Build an Ubuntu Virtual Machine](https://klequis.io/ubuntu-vm-virtualbox/)
+    3. Development Machine Setup
+        1. [Install NodeJS](https://klequis.io/installing-nodejs-ubuntu/)
+        2. [Install Git](https://klequis.io/installing-git-ubuntu/)
+        3. [Install nodemon](https://klequis.io/installing-nodemon-ubuntu/)
+        4. Install VS Code & Extensions
+        5. Install MongoDB
+        6. Install Robo3T
+3. Express Server Part I
+    1. Introduction to Express
+    2. Using @types
+    3. Review of Packages
+    4. What's Request & Response?
+    5. Localhost
+    6. Project Structure
+    7. Routes
+    8. Methods
+    9. npx
+    10. babel-node
+4. Ubuntu Server Part I
    1. DigitalOcean
    2. Linux & Ubuntu
    3. SSH
@@ -50,52 +51,52 @@ Below is the current outline with links to articles already published.
    8. UFW Firewall
    9. Nginx Reverse Proxy
    10. Server Blocks
-8. Express Server Deployment
-    1. Making a Build Script
-    2. Node & Bash
-    3. Performing the Build
-12. Ubuntu Server Part II
-    1. Using PM2
-    2. Setting-up a Server Block on Nginx
-    3. Using Nginx as a Reverse Proxy
-    4. Securing Nginx with Let's Encrypt
-17. React Client Part I
-    1. Project Structure Overview
-    2. Create React App
-    3. NPM & Yarn
-    4. Modify Project Structure
-    5. Get a Certificate for Your Domain
-    6. Deploy Client to S3
-    7. Setup a Hosted Zone
-25. DNS With Amazon Route53
-26. MongoDB
-    1. MongoDB Queries
-    2. Chaining
-    3. Shaping Returned Data
-    4. Creating a MongoDB Database
-    5. Project Structure
-    6. npm Packages
-    7. Babel Configuration
-    8. .gitignore
-    9. .perttier.config.js
-    10. Configuration Data
-    11. Helper Functions
-    12. Connecting and Disconnecting
-    13. Formatting Return Values
-    14. Logging Errors
-    15. Writing Tests
-        1. Text Environment Configuration
-        2. Writing & Testing dbFunctions
-        3. insertMany
-        4. dropCollection
-        5. insertOne
-        6. find
-        7. findById
-        8. findOneAndDelete
-        9. findOneAndUpdate
-    17. Adding Test Coverage Reporting
-    18. MongoDB Atlas
-27. Express Server Part II
+5. Express Server Deployment
+   1. Making a Build Script
+   2. Node & Bash
+   3. Performing the Build
+6. Ubuntu Server Part II
+   1. Using PM2
+   2. Setting-up a Server Block on Nginx
+   3. Using Nginx as a Reverse Proxy
+   4. Securing Nginx with Let's Encrypt
+7. React Client Part I
+   1. Project Structure Overview
+   2. Create React App
+   3. NPM & Yarn
+   4. Modify Project Structure
+   5. Get a Certificate for Your Domain
+   6. Deploy Client to S3
+   7. Setup a Hosted Zone
+8. DNS With Amazon Route53
+9. MongoDB
+   1. MongoDB Queries
+   2. Chaining
+   3. Shaping Returned Data
+   4. Creating a MongoDB Database
+   5. Project Structure
+   6. npm Packages
+   7. Babel Configuration
+   8. .gitignore
+   9. .perttier.config.js
+   10. Configuration Data
+   11. Helper Functions
+   12. Connecting and Disconnecting
+   13. Formatting Return Values
+   14. Logging Errors
+   15. Writing Tests
+       1. Text Environment Configuration
+       2. Writing & Testing dbFunctions
+       3. insertMany
+       4. dropCollection
+       5. insertOne
+       6. find
+       7. findById
+       8. findOneAndDelete
+       9. findOneAndUpdate
+   16. Adding Test Coverage Reporting
+   17. MongoDB Atlas
+10. Express Server Part II
     1. Project Structure
     2. Writing Tests
     3. Update package.json
@@ -103,7 +104,7 @@ Below is the current outline with links to articles already published.
     5. Implement Express Server
     6. Create Routes
     7. TBD ...
-28. React Client Part II
+11. React Client Part II
     - Completing the React Client
     - Implementing Auth0
     - Login / Logout
