@@ -26,12 +26,13 @@ module.exports = {
         name: "assets",
       },
     },
-    {
-      resolve: "gatsby-plugin-page-creator",
-      options: {
-        path: `${__dirname}/content/blog`,
-      }
-    },
+    // "gatsby-plugin-page-creator",
+    // {
+      // resolve: "gatsby-plugin-page-creator",
+      // options: {
+      //   path: `${__dirname}/content/blog`,
+      // }
+    // },
     {
       resolve: "gatsby-transformer-remark",
       options: {
