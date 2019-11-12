@@ -2,6 +2,8 @@
 description: If you need a free domain name you can get one from 'freenom'.
 modifiedDate: ''
 partOfBook: true
+postFooterText: ''
+postFooterIcon: finish-flag
 previewImage: 
 publishedDate: '2019-11-11'
 slug: get-a-free-domain-name
@@ -33,9 +35,3 @@ You can use a free or paid domain name for this series. Here are instructions fo
 - Enter your email address and click 'Verify My Email Address'.
 - Go to the email just sent to you click on the link.
 - Follow the instructions to finish obtaining your free domain name.
-
-<br/>
-<br/>
-<img src='../../assets/finish-flag.svg' width=150>
-
-**You're all done!**

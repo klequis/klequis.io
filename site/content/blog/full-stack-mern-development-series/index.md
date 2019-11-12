@@ -2,6 +2,8 @@
 description: Blog articles (and maybe a book) for learning full-stack development with MogoDB, Express, React & Node.
 modifiedDate: ""
 partOfBook: false
+postFooterText: none
+postFooterIcon: none
 previewImage:
 publishedDate: "2019-09-25"
 slug: full-stack-mern-development-series

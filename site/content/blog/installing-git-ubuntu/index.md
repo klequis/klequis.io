@@ -2,6 +2,8 @@
 description: Installing Git on Ubuntu is also quick & easy.
 modifiedDate: ''
 partOfBook: true
+postFooterText: ''
+postFooterIcon: ''
 previewImage: ''
 publishedDate: '2019-10-30'
 slug: installing-git-ubuntu
@@ -51,13 +53,6 @@ Before you can start using Git you need to tell Git your name and email.
 git config --global user.name "your-name"
 git config --global user.email "you@email.com"
 ```
-
-
-<br/>
-<br/>
-<img src='../../assets/finish-flag.svg' width=150>
-
-**You're all done!**
 
 ---
 

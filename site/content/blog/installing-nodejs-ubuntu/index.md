@@ -2,6 +2,8 @@
 description: There are several ways to install Node on Ubuntu. Here is the quick and easy way to get the latest version of Node installed.
 modifiedDate: '2019-10-19'
 partOfBook: true
+postFooterText: ''
+postFooterIcon: ''
 previewImage:  node-showit.png
 publishedDate: '2019-10-14'
 slug: installing-nodejs-ubuntu
@@ -72,10 +74,6 @@ Installing Node also installed npm. Check the npm version with this command.
 ```console
 npm -v
 ```
-
-<br/>
-<br/>
-<img src='../../assets/finish-flag.svg' width=150>
 
 **That's it. NodeJS & npm are now installed and ready to use.**
 
