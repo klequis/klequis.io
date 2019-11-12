@@ -11,7 +11,9 @@ module.exports = {
     },
   },
   plugins: [
+
     `gatsby-plugin-mdx`,
+
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -19,6 +21,7 @@ module.exports = {
         name: "blog",
       },
     },
+    
     {
       resolve: "gatsby-source-filesystem",
       options: {
