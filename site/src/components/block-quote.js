@@ -8,10 +8,8 @@ const blockQuoteStyle = {
   fontSize: '1.1487rem',
   fontStyle: 'italic',
   lineHeight: '1.45rem',
-  marginBottom: rhythm(2),
   marginLeft: 0,
   marginRight: 0,
-  marginTop: rhythm(3),
   opacity: 0.8,
   paddingBottom: 0,
   paddingLeft: '0.90625rem',
@@ -19,8 +17,13 @@ const blockQuoteStyle = {
   paddingTop: 0,
 }
 
-function BlockQuote({ children }) {
-  return <div style={blockQuoteStyle}>{children}</div>
+function BlockQuote({ children, marginTopRhythm=0, marginBottomRhythm=0 }) {
+  
+  return (
+    <div style={{ marginTop: rhythm(marginTopRhythm),  marginBottom: rhythm(marginBottomRhythm) }}>
+      <div style={blockQuoteStyle}>{children}</div>
+    </div>
+  )
 }
 
 export default BlockQuote
