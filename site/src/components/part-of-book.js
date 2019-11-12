@@ -1,7 +1,7 @@
 import React from "react"
-import Image from "gatsby-image"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 import { Link } from 'gatsby'
+import BlockQuote from './block-quote'
 
 const blockQuoteStyle = {
 	borderLeft: '0.54375rem solid #1ca086',
@@ -23,9 +23,9 @@ const blockQuoteStyle = {
 
 function PartOfBook() {
   return (
-    <div style={blockQuoteStyle}>
+    <BlockQuote>
         <p>This article is <Link to='/full-stack-mern-development-series'>part of a series of articles</Link> on full-stack MERN (MongoDB, Express, React & Node) development. For the full series see <Link to='/full-stack-mern-development-series'>Full-stack Mern Development</Link>.</p>
-    </div>
+    </BlockQuote>
   )
 }
 
