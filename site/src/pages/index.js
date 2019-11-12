@@ -70,17 +70,6 @@ class BlogIndex extends React.Component {
                     </Link>
                   : null
               }
-
-
-
-
-
-
-
-
-
-
-
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
