@@ -316,7 +316,9 @@ Currently, if your host machine is Ubuntu there is a problem where you will be p
 
 Shared folders allow you to access files on the host's file system from the VM. My view is it is best to keep all files used in the VM on the host. By doing so, if the VM were to become unavailable your files are still safe. 
 
-To make use of shared folders you need to add yourself to the `vboxusers` group.
+To make use of shared folders you need to add yourself to the virtual machine's `vboxusers` group.
+
+> Do this on the VM Guest, not the host.
 
 ```console
 sudo usermod -aG vboxusers klequis

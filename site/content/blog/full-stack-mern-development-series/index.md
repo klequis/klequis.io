@@ -12,11 +12,13 @@ title: Full-Stack MERN Development
 
 Last spring I started writing a book about full-stack MERN development. I made a great deal of progress but then other priorities took over and progress on the book has been slow. I have since decided to work on it in small chunks and post them as articles on [my blog](https://klequis.io).
 
-The genesis of the book comes from the two-hundred or so people I met from holding 177 [TriValley Coders](http://www.trivalleycoders.org/) meetings over the past three years. During this time I met new and experienced software developers seeking to add new skills in order to find a new, better or first software developer job.
+The genesis of the book comes from the many people I met while holding 177 [TriValley Coders](http://www.trivalleycoders.org/) meetings over the past three years. During this time I met new and experienced software developers seeking to add new skills in order to find a new, better or first software developer job.
 
 Often, people had learned a lot about one or more subjects but they often had two difficulties: 1) starting a project from scratch & 2) putting all the moving pieces together into a deployable application.
 
 The book intends to address these two difficulties. As a result it is broad in scope and very 'how to' focused. While there are lots of tidbits for beginners and detailed instructions on how to accomplish each task, the book/articles are aimed at developers who already know JavaScript, HTML, CSS & a little React.
+
+Since I use [Ubuntu](https://ubuntu.com/) (a type of [Linux](https://en.wikipedia.org/wiki/Linux)) the instructions are based on Ubuntu. Since many readers will not have Ubuntu, one of the first steps is creating an Ubuntu Virtual Machine. However, most of the Linux specific material is in chapter 2 'Setup', so using your Windows or Mac machine is only a bit more work. 
 
 Below is the current outline with links to articles already published.
 
