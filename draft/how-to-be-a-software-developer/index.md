@@ -2,4 +2,9 @@
 - Read the doc
 - Never give-up, Don't get discoraged (see Never give-up)
 - Ask for help but try first and research well
-
+- Back-up your data
+- Learn Git
+- Maybe: Keep code off of your system disk (I try too much stuff)
+- Get a SSD - it can be small
+- Do what your team decides until you are the leader, then work to build concensus, you can't really be in charge of smart ambitious people.
+- Don't watch software install. Get up and move.
