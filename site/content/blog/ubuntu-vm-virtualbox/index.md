@@ -2,6 +2,8 @@
 description: There are many reasons to try Linux. Installing it in a virtual machine is a risk free and $$ free way to get started.
 modifiedDate: ''
 partOfBook: true
+postFooterText: That's it. Your Ubuntu VM is ready to go!
+postFooterIcon: finish-flag
 previewImage: https://res.cloudinary.com/klequis/image/upload/v1571407010/hero-post_vrrx1y.png
 publishedDate: '2019-09-27'
 slug: 'ubuntu-vm-virtualbox'
@@ -314,7 +316,9 @@ Currently, if your host machine is Ubuntu there is a problem where you will be p
 
 Shared folders allow you to access files on the host's file system from the VM. My view is it is best to keep all files used in the VM on the host. By doing so, if the VM were to become unavailable your files are still safe. 
 
-To make use of shared folders you need to add yourself to the `vboxusers` group.
+To make use of shared folders you need to add yourself to the virtual machine's `vboxusers` group.
+
+> Do this on the VM Guest, not the host.
 
 ```console
 sudo usermod -aG vboxusers klequis
@@ -366,10 +370,3 @@ Finally, my keyboard has only one Windows key and it is on the right side. Ubunt
 - Select Keyboard & Mouse on the left-hand side
 - Under Overview Shortcut choose Left Super or Right Super
 
-<br />
-<br />
-
-<img src='../../assets/finish-flag.svg' width=200>
-
-
-> That's it. Your Ubuntu VM is ready to go!

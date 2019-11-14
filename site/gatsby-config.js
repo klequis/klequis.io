@@ -11,6 +11,9 @@ module.exports = {
     },
   },
   plugins: [
+
+    `gatsby-plugin-mdx`,
+
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -18,6 +21,7 @@ module.exports = {
         name: "blog",
       },
     },
+    
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -25,6 +29,13 @@ module.exports = {
         name: "assets",
       },
     },
+    // "gatsby-plugin-page-creator",
+    // {
+      // resolve: "gatsby-plugin-page-creator",
+      // options: {
+      //   path: `${__dirname}/content/blog`,
+      // }
+    // },
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -77,6 +88,6 @@ module.exports = {
         protocol: siteAddress.protocol.lastIndexOf(0, -1),
         hostname: siteAddress.hostname
       },
-    }
+    },
   ],
 }

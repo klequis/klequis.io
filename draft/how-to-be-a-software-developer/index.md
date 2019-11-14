@@ -1,0 +1,19 @@
+- Close your email and social accounts
+- Read the doc
+- Never give-up, Don't get discoraged (see Never give-up)
+- Ask for help but try first and research well
+- Back-up your data, automated, you won't remember of choose to do it
+- Learn Git
+- Maybe: Keep code off of your system disk (I try too much stuff)
+- Get a SSD - it can be small
+- Do what your team decides until you are the leader, then work to build concensus, you can't really be in charge of smart ambitious people.
+- Don't watch software install. Get up and move.
+- learn about ergonomics
+- get an ergonomic keyboard
+- learn keyboard shortcuts
+  - your fingers won't last forever and for some people, not long at all
+  - Type softly
+- Take your time, think a lot
+  - Mistakes cost more time even in the short-run
+- Don't type fast. Coding is mostly thinking and planning. Typing fluently allows you thinking to not be interrupded by thinking about typing, but typing fast isn't going to help you get home any earlier.
+

@@ -2,6 +2,8 @@
 description: Quick fix to an unexpected limit on files watch.
 modifiedDate: ''
 partOfBook: false
+postFooterText: ''
+postFooterIcon: 'hammer'
 previewImage: ''
 publishedDate: '2019-10-15'
 slug: error-enospc-system-limit-for-number-of-file-watchers-reached
@@ -57,16 +59,6 @@ cat /proc/sys/fs/inotify/max_user_watches
 524288
 
 ```
-
-<br />
-<br />
-
-<img src='../../assets/hammer.svg' width=200>
-
-
-**Yeah, problem solved!!**
-
-
 
 ## References
 

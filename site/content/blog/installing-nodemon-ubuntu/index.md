@@ -2,6 +2,8 @@
 description: Installing Nodmon on Ubuntu is just one command.
 modifiedDate: ''
 partOfBook: true
+postFooterText: ''
+postFooterIcon: ''
 previewImage: 
 publishedDate: '2019-10-30'
 slug: installing-nodemon-ubuntu
@@ -70,11 +72,6 @@ console.log('hello again')
 
 Save your file while watching the console. You will see 'hello again' printed.
 
-<br/>
-<br/>
-<img src='../../assets/finish-flag.svg' width=150>
-
-**You're all done!**
 
 ---
 

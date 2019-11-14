@@ -1,7 +1,7 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const SEO = ({
   article = false,
@@ -30,28 +30,18 @@ const SEO = ({
     `
   )
 
-  console.log('**** og:url hard coded : rev-3 ****');
-
-  const { description: siteMetaDescription, siteUrl: siteMetaUrl, title: siteMetaTitle } = site.siteMetadata
+  const {
+    description: siteMetaDescription,
+    siteUrl: siteMetaUrl,
+    title: siteMetaTitle,
+  } = site.siteMetadata
 
   const fullCanonicalUrl = `${siteMetaUrl}/${slug}`
-  console.log('fullCanonicalUrl', fullCanonicalUrl);
-  
 
-  
-  
   let pageUrlNoFinalSlash
   if (pageUrl !== undefined) {
     pageUrlNoFinalSlash = pageUrl.substring(0, pageUrl.length - 1)
   }
-  
-  // console.log('pageUrlNoFinalSlash', pageUrlNoFinalSlash);
-  // console.log('ogUrl', ogUrl);
-  
-
-
-
-  // const allMeta = article ? [...articleMeta, ...commonMeta] : [...commonMeta]
 
   return (
     <Helmet
@@ -62,9 +52,15 @@ const SEO = ({
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       link={
         slug
-          ? [{ rel: "canonical", key: fullCanonicalUrl, href: fullCanonicalUrl }]
-          : [{ rel: "canonical", key: siteMetaUrl, href: siteMetaUrl }]
-        }
+          ? [
+              {
+                rel: 'canonical',
+                key: fullCanonicalUrl,
+                href: fullCanonicalUrl,
+              },
+            ]
+          : [{ rel: 'canonical', key: siteMetaUrl, href: siteMetaUrl }]
+      }
       // meta={allMeta.concat(meta)}
       meta={[
         {
@@ -73,11 +69,11 @@ const SEO = ({
         },
         {
           property: `og:image:height`,
-          content: "286",
+          content: '286',
         },
         {
           property: `og:image:width`,
-          content: "590",
+          content: '590',
         },
         {
           name: `description`,
@@ -94,12 +90,12 @@ const SEO = ({
         {
           // assumes that if type is not specified it is the home page
           property: `og:type`,
-          content: article ? "article" : `website`,
+          content: article ? 'article' : `website`,
         },
         {
           property: `og:url`,
           // content: ogUrl,
-          content: fullCanonicalUrl
+          content: fullCanonicalUrl,
         },
       ]}
     />
@@ -110,7 +106,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-  ogimage: "none",
+  ogimage: 'none',
 }
 
 SEO.propTypes = {

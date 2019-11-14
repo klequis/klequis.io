@@ -2,10 +2,14 @@
 description: I'm not the only one who made an incorrect assumption about MongoDB's `ObjectID.isValid()` function.
 modifiedDate: '2019-11-09'
 partOfBook: false
+postFooterText: ''
+postFooterIcon: ''
 previewImage: https://res.cloudinary.com/klequis/image/upload/v1573314204/whats-a-valide-mongodb-id.post_nk9pf3.png
 publishedDate: '2019-05-24'
 slug: whats-a-valid-mongodb-id
 title: What's a Valid MongoDB ID?
+
+
 ---
 
 I spent some time reading questions and discussion of valid MongoDB IDs and there is considerable confusion with the [native drivers'](https://mongodb.github.io/node-mongodb-native/) [ObjectID.isValid() function](https://mongodb.github.io/node-mongodb-native/3.2/api/ObjectID.html#.isValid).

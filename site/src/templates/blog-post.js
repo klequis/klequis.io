@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import PartOfBook from "../components/part-of-book"
+import PostFooter from '../components/PostFooter'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -19,13 +20,8 @@ class BlogPostTemplate extends React.Component {
       modDate.toLowerCase() !== "invalid date"
         ? new Date(modDate).toISOString()
         : ""
-    // const partOfBookRaw = post.frontmatter.partOfBook
-    // console.log('partOfBookRaw', partOfBookRaw);
 
     const partOfBook = post.frontmatter.partOfBook ? true : false
-    console.log("post", post)
-
-    console.log("partOfBook", partOfBook)
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -58,11 +54,16 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.publishedDate}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <PostFooter
+          quoteText={post.frontmatter.postFooterText}
+          iconType={post.frontmatter.postFooterIcon}
+        />
         <hr
           style={{
             marginBottom: rhythm(1),
           }}
         />
+        
         <Bio />
 
         <ul
@@ -113,6 +114,8 @@ export const pageQuery = graphql`
         description
         modifiedDate(formatString: "MMMM DD, YYYY")
         partOfBook
+        postFooterIcon
+        postFooterText
         previewImage
         publishedDate(formatString: "MMMM DD, YYYY")
         title
