@@ -2,7 +2,7 @@
 - Read the doc
 - Never give-up, Don't get discoraged (see Never give-up)
 - Ask for help but try first and research well
-- Back-up your data
+- Back-up your data, automated, you won't remember of choose to do it
 - Learn Git
 - Maybe: Keep code off of your system disk (I try too much stuff)
 - Get a SSD - it can be small
