@@ -1,7 +1,0 @@
-- learn about ergonomics
-- get an ergonomic keyboard
-- learn keyboard shortcuts
-  - your fingers won't last forever and for some people, not long at all
-- Type softly
-- Take your time, think a lot
-  - Mistakes cost more time even in the short-run
