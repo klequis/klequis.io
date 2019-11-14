@@ -1,2 +1,5 @@
-learn about ergonomics
-get an ergonomic keyboard
+- learn about ergonomics
+- get an ergonomic keyboard
+- learn keyboard shortcuts
+  - your fingers won't last forever and for some people, not long at all
+- Type softly
