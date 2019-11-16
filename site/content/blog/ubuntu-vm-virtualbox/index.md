@@ -314,7 +314,7 @@ Currently, if your host machine is Ubuntu there is a problem where you will be p
 
 ## Shared Folders
 
-> Note (15-Nov-19): This section had an error which is now corrected. It originally said to add yourself to 'vboxusers' instead of sboxsf.
+> Note (15-Nov-19): This section had an error which is now corrected. It originally said to add yourself to 'vboxusers' instead of vboxsf.
 
 Shared folders allow you to access files on the host's file system from the VM. My view is it's best to keep all files used in the VM on the host. By doing so, if the VM were to become unavailable your files are still safe. 
 
@@ -323,27 +323,27 @@ To make use of shared folders you need to add yourself to the guest machine's `v
 > Do this on the VM Guest, not the host.
 
 ```console
-sudo adduser [yourUsersName] vboxsf
+sudo adduser [yourUserName] vboxsf
 ```
 
-So for met it would be:
+So for me it would be:
 
 ```console
 sudo adduser klequis vboxsf
 ```
 
 Then go back to the VirtualBox Manager:
-- Right-click your VM and click Settings...
+- Right-click your VM and select Settings...
 - Select Shared Folders in the left pane
-- On the right side of the dialog, click the folder with the '+' sign.
+- On the right side of the dialog, click the folder button with the '+' sign.
 
 
 ![add shared folder](media/add-shared-folder.png)
 
 In the Add Share dialog:
-- Choose the folder on your host machine you want to share. I simple share my home folder
-- By default the folder name will be the name of the folder you choose. You can change it if you want
-- **Auto-mount** will make sure the shared folder is available when the VM is started
+- Choose the folder on your host machine you want to share. I simply share my home folder.
+- By default the folder name will be the name of the folder you choose. You can change it if you want.
+- Select **Auto-mount** so that the shared folder is available when the VM starts.
 
 ![add share](media/add-share.png)
 
