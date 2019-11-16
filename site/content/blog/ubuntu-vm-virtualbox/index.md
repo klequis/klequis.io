@@ -314,14 +314,22 @@ Currently, if your host machine is Ubuntu there is a problem where you will be p
 
 ## Shared Folders
 
-Shared folders allow you to access files on the host's file system from the VM. My view is it is best to keep all files used in the VM on the host. By doing so, if the VM were to become unavailable your files are still safe. 
+> Note (15-Nov-19): This section had an error which is now corrected. It originally said to add yourself to 'vboxusers' instead of sboxsf.
 
-To make use of shared folders you need to add yourself to the virtual machine's `vboxusers` group.
+Shared folders allow you to access files on the host's file system from the VM. My view is it's best to keep all files used in the VM on the host. By doing so, if the VM were to become unavailable your files are still safe. 
+
+To make use of shared folders you need to add yourself to the guest machine's `vboxsf` group.
 
 > Do this on the VM Guest, not the host.
 
 ```console
-sudo usermod -aG vboxusers klequis
+sudo adduser [yourUsersName] vboxsf
+```
+
+So for met it would be:
+
+```console
+sudo adduser klequis vboxsf
 ```
 
 Then go back to the VirtualBox Manager:
