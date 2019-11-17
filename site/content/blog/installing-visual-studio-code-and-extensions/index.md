@@ -1,11 +1,11 @@
 ---
-description: Quick fix to an unexpected limit on files watch.
+description: With the addition of a few extensions VS Code is a great code editor.
 modifiedDate: ''
 partOfBook: false
-postFooterText: ''
-postFooterIcon: 'hammer'
+postFooterText: 'You are ready to start coding!'
+postFooterIcon: ''
 previewImage: ''
-publishedDate: '2019-11-13'
+publishedDate: '2019-11-15'
 slug: installing-visual-studio-code-and-extensions
 title: Installing Visual Studio Code and Extensions
 ---
