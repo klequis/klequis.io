@@ -4,78 +4,49 @@ modifiedDate: ''
 partOfBook: true
 postFooterText: ''
 postFooterIcon: ''
-previewImage: 
+previewImage:
 publishedDate: '2019-10-30'
-slug: installing-nodemon-ubuntu
-title: Installing Nodemon on Ubuntu
+slug: quick-introduction-to-using-ubuntu-18.04
+title: A Quick Opinionated Introduction to Ubuntu 18.04
 ---
 
-nodemon is a simple process that will restart your development server when files it is watching have changed. 
+## Super Key
 
-You can use nodemon just like node. For example, if you had a file named `demo-code.js` with this code:
-
-```js
-console.log('hello from demo code')
-```
-
-You can run it using node with this command:
-
-```console
-node demo-code.js
-```
-
-'hello from demo code' will be printed to the console. After each code change you need to re-issue the above command.
-
-To run the code with nodemon:
-
-```console
-nodemon demo-code.js
-```
-
-Now when you change and save your code it will re-run automatically.
-
-## Installation
-
-Use this command to install nodemon:
-
-```console
-sudo npm i -g nodemon
-```
-
-## Give it a try
-
-```console
-mkdir nodemon-try
-cd nodemon-try
-touch demo-code.js
-```
-
-Add some code to `demo-code.js`:
-
-```js
-console.log('hello')
-```
-
-Then run the code using nodemon:
-
-```console
-nodemon demo-code.js
-```
-
-You will see 'hello' printed to the console.
-
-Change the code in `demo-code.js` to:
-
-```js
-console.log('hello again')
-```
-
-Save your file while watching the console. You will see 'hello again' printed.
+The Super key is the same key as the Windows key on a Windows keyboard. Pressing it brings up the Activities Overview.
 
 
----
+## Activities Overview
 
-### References
-- [nodemon](https://nodemon.io/)
+So you pressed the Super key and and are looking at the Activities Overview. In it you can see the currently open windows and the Workspaces list (see below).
 
+I use the Activities Overview for access to the Search Bar (see below) which I use constantly and the Workspaces List which I use occasionally.
 
+![ubuntu activities overview](media/activities-overview.png)
+
+## Search Bar
+
+Speaking of the Search Bar, it is the fastest way of launching applications as well as finding ....   . Just start typing say 'fire'.
+
+![search for fire](media/search-bar-fire.png)
+
+The top section of the search results shows Firefox was found as an installed application. The small lighted orange dash at the bottom of the Firefox logo shows that I have one Firefox window open.
+
+The next section is files found that contain 'fire' and the bottom section is software available to install that have 'fire' in their name or description (although I'm not sure how Kdenlive got in there).
+
+## The Dash
+
+The Dash appears on the left side of the primary monitor. You can add your favorite apps here and launch them, as well as see which apps are running and how many Windows open for each app.
+
+![the dash](media/dash.png)
+
+Since I always launch application via the Search Bar, my preference for using the Dash is to remove all 'favorites' so it only shows running applications and the number of windows per application. I can't remember the last time I clicked on it.
+
+## Workspace List
+
+## Application Menu
+
+## System Menu
+
+## Alt-tab
+
+## Ubuntu Software
