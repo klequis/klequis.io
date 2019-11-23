@@ -18,7 +18,7 @@ Often, people had learned a lot about one or more subjects but they often had tw
 
 The book intends to address these two difficulties. As a result it is broad in scope and very 'how to' focused. While there are lots of tidbits for beginners and detailed instructions on how to accomplish each task, the book/articles are aimed at developers who already know JavaScript, HTML, CSS & a little React.
 
-Since I use [Ubuntu](https://ubuntu.com/) (a type of [Linux](https://en.wikipedia.org/wiki/Linux)) the instructions are based on Ubuntu. Since many readers will not have Ubuntu, one of the first steps is creating an Ubuntu Virtual Machine. However, most of the Linux specific material is in chapter 2 'Setup', so using your Windows or Mac machine is only a bit more work. 
+Since I use [Ubuntu](https://ubuntu.com/) (a type of [Linux](https://en.wikipedia.org/wiki/Linux)) the instructions are based on Ubuntu. Since many readers will not have Ubuntu, one of the first steps is creating an Ubuntu Virtual Machine. However, most of the Linux specific material is in chapter 2 'Setup', so using your Windows or Mac machine is only a bit more work.
 
 Below is the current outline with links to articles already published.
 
@@ -26,7 +26,8 @@ Below is the current outline with links to articles already published.
 2. Setup
     1. [Get a Domain](https://klequis.io/get-a-free-domain-name/)
     2. [Build an Ubuntu Virtual Machine](https://klequis.io/ubuntu-vm-virtualbox/)
-    3. Development Machine Setup
+    3. [A Quick Opinionated Introduction to Ubuntu 18.04](https://klequis.io/quick-introduction-to-using-ubuntu-18.04/)
+    4. Development Machine Setup
         1. [Install NodeJS](https://klequis.io/installing-nodejs-ubuntu/)
         2. [Install Git](https://klequis.io/installing-git-ubuntu/)
         3. [Install nodemon](https://klequis.io/installing-nodemon-ubuntu/)
