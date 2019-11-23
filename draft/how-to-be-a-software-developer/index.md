@@ -74,3 +74,16 @@ Carpenters should measure twice and cut once. Programmers should think twice (or
 
 Some of the above I am very consistent on. Other things a little less so. But never give-up.
 
+## Retain Knowledge
+
+There may be an Mozart of remembering things but the rest of us need to write things down.
+
+As software developers we solve problems for a living. We solve a lot of problems every day. Some things we do often and will remember. Other things we do occasionally and don't remember or only partially remember.
+
+While it takes time (not to mention some practice) to write things down in a way that it will be helpful to your future self and it is hard to take that time in the heat of the moment, it yields huge long-term gains.
+
+What you should write down and what you should not is a simple formula. If you spent any significant amount of time figuring out how to do something and/or you had to cobble the solution together from multiple sources of information, you will benefit from writing a how to on the subject.
+
+My thinking on how tos has eveolved. I used to write notes to myself from the perspective of what I knew at the time I was writing it. What I found is that my future self six months later didn't have the same context and the how to was was no longer helful.
+
+The best way to write a how to is to write it as if you are writing it for someone else. Make it a step by step and keep all references to sources you used.
