@@ -7,7 +7,7 @@ postFooterIcon: ''
 previewImage:
 publishedDate: '2019-11-23'
 slug: quick-introduction-to-using-ubuntu-18.04
-title: A Quick Opinionated Introduction to Ubuntu 18.04
+title: A Quick Opinionated Introduction to Using Ubuntu 18.04
 ---
 
 ## A Couple of Definitions
