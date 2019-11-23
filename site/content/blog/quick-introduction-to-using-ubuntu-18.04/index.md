@@ -1,7 +1,7 @@
 ---
 description: If you are brand-new to Ubuntu, here is a quick overview to get you started.
 modifiedDate: ''
-partOfBook: false
+partOfBook: true
 postFooterText: ''
 postFooterIcon: ''
 previewImage:
