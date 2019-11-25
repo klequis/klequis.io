@@ -31,7 +31,7 @@ Below is the current outline with links to articles already published.
         1. [Install NodeJS](https://klequis.io/installing-nodejs-ubuntu/)
         2. [Install Git](https://klequis.io/installing-git-ubuntu/)
         3. [Install nodemon](https://klequis.io/installing-nodemon-ubuntu/)
-        4. Install VS Code & Extensions
+        4. [Install VS Code & Extensions](https://klequis.io/installing-visual-studio-code-and-extensions/)
         5. Install MongoDB
         6. Install Robo3T
 3. Express Server Part I
