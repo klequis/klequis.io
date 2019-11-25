@@ -4,7 +4,7 @@ modifiedDate: '2019-10-19'
 partOfBook: true
 postFooterText: ''
 postFooterIcon: ''
-previewImage:  node-showit.png
+previewImage:  
 publishedDate: '2019-10-14'
 slug: installing-nodejs-ubuntu
 title: Installing NodeJS on Ubuntu
