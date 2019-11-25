@@ -1,6 +1,6 @@
 ---
 description: With the addition of a few extensions VS Code is a great code editor.
-modifiedDate: ''
+modifiedDate: '2019-11-25'
 partOfBook: true
 postFooterText: 'You are ready to start coding!'
 postFooterIcon: ''
@@ -9,6 +9,8 @@ publishedDate: '2019-11-15'
 slug: installing-visual-studio-code-and-extensions
 title: Installing Visual Studio Code and Extensions
 ---
+
+![installing visual studio code and extensions banner](media/installing-visual-studio-code-and-extensions.banner.png)
 
 The best way to install Visual Studio Code on Ubuntu is to use Ubuntu Software. If you are not using Ubuntu you can find installation instructions [here](https://code.visualstudio.com/).
 
