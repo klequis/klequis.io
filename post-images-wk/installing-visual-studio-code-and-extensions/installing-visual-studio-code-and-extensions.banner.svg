@@ -15,8 +15,8 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="installing-visual-studio-code-and-extensions.post.svg"
-   inkscape:export-filename="/home/klequis/dev/klequis.io/post-images-wk/intalling-firefox-developer-edition-ubuntu/firefox-dev-edition-post.png"
+   sodipodi:docname="installing-visual-studio-code-and-extensions.banner.svg"
+   inkscape:export-filename="/home/klequis/dev/klequis.io/site/content/blog/installing-visual-studio-code-and-extensions/installing-visual-studio-code-and-extensions.banner.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
   <defs
@@ -557,7 +557,7 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="69.735789"
+     inkscape:cx="-490.26421"
      inkscape:cy="-11.574664"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -599,17 +599,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-10.19165)">
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:26.07643127px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.65191078"
-       x="321.98892"
-       y="71.266571"
-       id="text3830"><tspan
-         sodipodi:role="line"
-         id="tspan3828"
-         x="321.98892"
-         y="71.266571"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:26.07627487px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#1ca086;fill-opacity:1;stroke-width:0.65191078">Installing</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot4673"
@@ -620,32 +609,10 @@
            height="85.254997"
            x="186.68929"
            y="692.24475" /></flowRegion><flowPara
-         id="flowPara4679" /></flowRoot>    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:26.07643318px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.65191078"
-       x="266.91409"
-       y="151.964"
-       id="text3830-3"><tspan
-         sodipodi:role="line"
-         id="tspan3828-6"
-         x="266.91409"
-         y="151.964"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:26.07627487px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#1ca086;fill-opacity:1;stroke-width:0.65191078">Visual Studio Code</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:26.07643509px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.65191078"
-       x="316.73169"
-       y="240.41046"
-       id="text3830-3-7"><tspan
-         sodipodi:role="line"
-         id="tspan3828-6-5"
-         x="316.73169"
-         y="240.41046"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:26.07627487px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#1ca086;fill-opacity:1;stroke-width:0.65191078">on Ubuntu</tspan></text>
-    <g
+         id="flowPara4679" /></flowRoot>    <g
        style="fill:none"
        id="g1142"
-       transform="matrix(0.44307062,0,0,0.3918854,35.275854,90.454573)">
+       transform="matrix(0.44307062,0,0,0.3918854,225.77585,91.868413)">
       <g
          id="g1070"
          mask="url(#mask0)">
