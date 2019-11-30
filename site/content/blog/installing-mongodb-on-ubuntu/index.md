@@ -20,6 +20,8 @@ MongoDB has excellent instructions on how to install the MongoDB Community Editi
 
 ## Definitions
 
+Reading the definition of a term doesn't always lead to immediate understanding. For me, the best way to learn new terms is to read through them, put them to use as you will do below, and then come back and read them again.
+
 - **Resource:** A resource can be a database, collection, set of collections or a cluster.
 
 - **Action:** An action specifies the operation allowed on the resource. For example 'find', 'create' or 'insert'.
@@ -72,15 +74,52 @@ Begin content
 
 
 
+Now we will configure MongoDB. We need to:
+- Crate super & test users
+- Enable authentication
+- Perform some brief testing
 
 
+> We will be using the MongoDB Shell. If you are not familiar with it see [The mongo Shell](https://docs.mongodb.com/manual/mongo/).
 
+---
+## Authentication is Not Enabled
 
+Before creating users let's take a quick look the current lack of authentication. Start the MongoDB shell. The command is simply `mongo`.
 
-## Create superuser
 ```console
 mongo
+```
+
+As you can see from the output in the image below, your in and have full access. We will fix this issue below, but first we need a user to authenticate with.
+
+<em>click on the image for a larger view</em>
+<br><br>
+![authentication not enabled message](media/authentication-not-enabled-message.png)
+---
+
+## Create superuser
+
+The first user to create is the 'superuser'. This user has full access and will only be used for certain tasks.
+
+If you are not still in the mongo shell type `mongo` to enter it.
+
+```console
+mongo
+
+```
+
+The `use admin` command switches you to the `admin` database. This will be the 'authentication database' for superuser.
+
+```console
+
 use admin
+
+```
+
+Now use `createUser()` the create the superuser with the [root role](https://docs.mongodb.com/manual/reference/built-in-roles/#root).
+
+```console
 
 db.createUser(
   {
@@ -93,38 +132,69 @@ db.createUser(
 
 ## Enable Authenticaton
 
+To enable authentication you need to add a line to the `mongo.service` file.
+
+> In the steps below the editor 'GNU nano' will be used. However, you can use any editor you are comfortable with. I you want to know more about nano, [visit its documentation](https://www.nano-editor.org/dist/latest/nano.html).
+
+Exit the mongo shell.
+
 ```console
 
 ctrl+c
+
+```
+
+Use nano to edit the file.
+
+```
 
 sudo nano /lib/systemd/system/mongod.service
 
 
 ```
 
-# add --auth
+Find the line
+
+```
+ExecStart=/usr/bin/mongod --config /etc/mongod.conf
+
+```
+
+And add `--auth` to it so the full line is
+
+```
+
 ExecStart=/usr/bin/mongod --auth --config /etc/mongod.conf
 
-ctrl+o
-enter
-ctrl+x
+```
 
+If you are not familiar with Nano, note the keyboard shortcuts at the bottom of the editor. To save the file and exit Nano
+
+- `ctrl+o` then `enter` to write the file to disk
+- `ctrl+x` to exit Nano
+
+
+Next you need to reload system level configuration with the command:
+
+```
 sudo systemctl daemon-reload
+```
 
+And then restart the `mongod` process:
+
+```
 sudo service mongod restart
-
-
 ```
 
 
 ## Verify Authentication
 
 ```js
-
 mongo
 ```
 
 Output - no longer warning about authentication
+
 ```js
 MongoDB shell version v4.0.10
 connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
@@ -229,6 +299,8 @@ sudo systemctl start mongodb
 sudo systemctl stop mongodb
 sudo systemctl restart mongodb
 sudo systemctl status mongodb
+
+TODO: My guess is enable makes it start automatically and disable does not?
 sudo systemctl enable mongodb // don't start automatically
 sudo systemctl disable mongodb // don't start automatically
 ```
