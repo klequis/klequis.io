@@ -15,7 +15,7 @@ title: Building a Ubuntu Desktop Virtual Machine with VirtualBox
 
 There are many reasons why you may want to build a Linux virtual machine. For me, as an employee of large corporations I was a Windows user for nearly 15 years and used mostly Microsoft development tools. When I left the corportate world and started using non-Microsoft tools I quickly realized that most 'how to' information on the web was for Mac or Linux. I either had to search harder to find Windows information or spend time figuring it out. Not wanting to buy a Mac at that point I tried Linux and have been using it for the past five years. While I originally used Ubuntu in a virtual machine, I eventually removed Windows and installed Ubuntu. I have Windows as a virtual machine because I love Microsoft Excel.
 
-Here are a few other reasons to consider linux: 
+Here are a few other reasons to consider linux:
 - Your app will run on Linux in production and you want to do development on Linux as well to reduce the complications of development and deployment.
 - You want to run a web and/or database server on Linux.
 - You may be curious about a different operating system.
@@ -35,7 +35,7 @@ A couple of words used frequently in this article:
 
 ### Memory
 
-The short answer: 16 GB is plenty. 8 GB is likely enough. 4 GB isn't enough. 
+The short answer: 16 GB is plenty. 8 GB is likely enough. 4 GB isn't enough.
 
 If you are going to be doing development on the guest you'll need to give the guest 4 to 6 GB of memory. Check you host system after a fresh boot to see how much free memory it has. The equation isn't really 'host memory after boot' + '4 to 6 for guest' = 'amount of memory on host'. The host will always need a little extra.
 
@@ -58,7 +58,20 @@ Any multi-core processor, Intel or AMD, made in the last 8 to 10 years should be
 ## Installing VirtualBox
 Go to the [VirtualBox download page](https://www.virtualbox.org/wiki/Downloads) and download the package for your host OS. Then follow the usual installation proceedure for your host OS.
 
-<hr/>
+## Host Key & Stolen Shortcut Key Combinations
+
+Before creating the virtual machine we need to change some VirtualBox settings related to the 'host key'.
+
+The 'host key' is a key that when used specifies that you want to perform an action on the virtual machine container and not the OS running inside of the virtual machine. When using a Linux host the host key is set to 'right ctrl'. Unfortunately, that means when using the virtual machine and you want to perform an action such as copy with ctrl-c, the key command is captured by VirtualBox and is not received by the guest OS. Hence, you can't copy with the keyboard :).
+
+Given how I use a virtual machine I don't really have a need for a host key and I set it to 'None'. However, it could also be set to something else to suite your needs. Here is how to set it to 'None'.
+
+- Go to File > Preferences > Input > Virtual Machine
+- Change 'Host Key Combination' to 'None'
+
+![set host key to none](media/set-host-key-to-none.png)
+
+
 
 ## Create the VM
 - Open VirtualBox
@@ -123,7 +136,7 @@ Right-click the new VM and select 'Settings...'
 
 ![click settings](media/click-settings.png)
 
-### General > Advanced 
+### General > Advanced
 - Set both 'Shared Clipboard' and 'Drag'n'Drop' to 'Bidirectional'
 
 This will allow you to copy and paste between the host and guest machines and greatly simplify your workflow.
@@ -256,7 +269,7 @@ At some point soon after installation, you will soon see a message from the Ubun
 You now have a Ubuntu Virtual Machine but need to install VirtualBox 'Guest Additions' which will add crutial features to the VM. The most noticable of these is that the virtual machine will display full-screen instead of the small box you have seen so far.
 
 ![all done](media/all-done.png)
-  
+
 # Install Guest Additions
 
 ## Ubuntu Host
@@ -316,7 +329,7 @@ Currently, if your host machine is Ubuntu there is a problem where you will be p
 
 > Note (15-Nov-19): This section had an error which is now corrected. It originally said to add yourself to 'vboxusers' instead of vboxsf.
 
-Shared folders allow you to access files on the host's file system from the VM. My view is it's best to keep all files used in the VM on the host. By doing so, if the VM were to become unavailable your files are still safe. 
+Shared folders allow you to access files on the host's file system from the VM. My view is it's best to keep all files used in the VM on the host. By doing so, if the VM were to become unavailable your files are still safe.
 
 To make use of shared folders you need to add yourself to the guest machine's `vboxsf` group.
 
@@ -377,4 +390,3 @@ Finally, my keyboard has only one Windows key and it is on the right side. Ubunt
 - Launch GNOME Tweaks
 - Select Keyboard & Mouse on the left-hand side
 - Under Overview Shortcut choose Left Super or Right Super
-
