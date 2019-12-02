@@ -10,9 +10,27 @@ slug: installing-mongodb-on-ubuntu
 title: Installing MongoDB on Ubuntu
 ---
 
-## MongoDB Local Install
+# <temp>
+
+- Install it
+- Illustrate auth not Enabled
+- create superUser
+- Enable authentication
+  - Verify authentication
+- Login as superUser
+- Create testUser
+  - Test testUser
+- Create devUser
+  - Test devUser
+- MongoDB Commands
+- xx - Test App (I don't thing this is needed but ...)
+- Reference
+
+# </temp>
 
 The production version of our app will use [MongoDB](https://mongodb.com) hosted on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). However, for development it is easier to work with MongoDB locally.
+
+## MongoDB Local Install
 
 MongoDB has excellent instructions on how to install the MongoDB Community Edition on Ubuntu. Install MongoDB on your local machine using the official documentation: [Install MongoDB Community Edition](https://docs.mongodb.com/manual/administration/install-community/). Once that is done the remainder of this article will focus on configuration.
 
@@ -35,49 +53,10 @@ Reading the definition of a term doesn't always lead to immediate understanding.
 - **Authentication Database:** You create a given user in a given database and that becomes the authentication database for the user. However, a user's privileges are not limited to that database. You can assign it roles in other databases as well. Read more at: [Authentication Database](https://docs.mongodb.com/manual/core/security-users/#user-authentication-database)
 
 
-> TODO: What and where does this go?
-## Illustrative Info
-- You can see users in roles using Robo3T. Roles are in system.roles and users in system.users
-
-
-
----
-
-**Extra Information**
-
-- [Database Commands](https://docs.mongodb.com/manual/reference/command/)
-  - [Role Management Commands](https://docs.mongodb.com/manual/reference/command/nav-role-management/)
-  - [createUser](https://docs.mongodb.com/manual/reference/command/#user-management-commands)
-
-
-  ```console
-
-  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
-
-  echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
-
-  sudo apt-get update
-
-  sudo apt-get install -y mongodb-org
-
-  sudo systemctl enable mongod
-  sudo systemctl start mongod
-
-  ```
-
-
----
-
-Begin content
-
----
-
-
-
 Now we will configure MongoDB. We need to:
-- Crate super & test users
-- Enable authentication
-- Perform some brief testing
+- Create super & test users.
+- Enable authentication.
+- Perform some brief testing for each user.
 
 
 > We will be using the MongoDB Shell. If you are not familiar with it see [The mongo Shell](https://docs.mongodb.com/manual/mongo/).
@@ -98,9 +77,9 @@ As you can see from the output in the image below, your in and have full access.
 ![authentication not enabled message](media/authentication-not-enabled-message.png)
 ---
 
-## Create superuser
+## Create superUser
 
-The first user to create is the 'superuser'. This user has full access and will only be used for certain tasks.
+The first user to create is the 'superUser'. This user has full access and will only be used for certain tasks.
 
 If you are not still in the mongo shell type `mongo` to enter it.
 
@@ -109,7 +88,7 @@ mongo
 
 ```
 
-The `use admin` command switches you to the `admin` database. This will be the 'authentication database' for superuser.
+The `use admin` command switches you to the `admin` database. This will be the 'authentication database' for superUser.
 
 ```console
 
@@ -117,13 +96,13 @@ use admin
 
 ```
 
-Now use `createUser()` the create the superuser with the [root role](https://docs.mongodb.com/manual/reference/built-in-roles/#root).
+Now use `createUser()` the create the superUser with the [root role](https://docs.mongodb.com/manual/reference/built-in-roles/#root).
 
 ```console
 
 db.createUser(
   {
-    user: "superuser",
+    user: "superUser",
     pwd: "karl",
     roles: [ "root" ]
   }
@@ -217,14 +196,32 @@ DB.prototype.getUsers@src/mongo/shell/db.js:1686:1
 
 ```
 
-## Create testUser
+## Login as 'superUser'
 
-Login as superuser
-```js
-ctrl+c
-mongo -u superuser -p --authenticationDatabase admin
+If you are already in the mongo shell, exit using `ctrl-c`.
+
+Use the below command to login as 'superUser'. The command options are:
+- `-u superUser`: Login as user 'superUser'.
+- `-p`: Prompt for password.
+- `--authenticationDatabase admin`: Authenticate using the `admin` database.
+
+```console
+mongo -u superUser -p --authenticationDatabase admin
 ```
 
+> Security Tip
+> You could include your password in the above command as `-p yourPassword` but this would put your password in the [bash](https://www.gnu.org/software/bash/) history file which can be read by an attacker. Don't do it!.
+
+
+## Create testUser
+
+If you are not already logged in as 'superUser', follow the steps in the section above.
+
+Now create testUser. The command specifies
+
+- `user: "testUser"`: The username is 'testUser'.
+- `pwd: "karl"`: The user's password is 'karl'.
+- `roles: [ { role: "readWrite", db: "todo-test" } ]`: The user is granted the [readWrite](https://docs.mongodb.com/manual/reference/built-in-roles/#readWrite) role in the `todo-test` database.
 
 ```js
 use todo-test
@@ -237,6 +234,32 @@ db.createUser(
 )
 ```
 
+### Verify 'testUser'
+```js
+use todo-test
+
+db.todos.insertOne({ title: 'todo1', completed: false }) {
+	"acknowledged" : true,
+	"insertedId" : ObjectId("5cf316024766652dcde6f7b5")
+}
+```
+
+**Output**
+```js
+
+```
+
+```js
+db.todos.find()
+```
+
+**Output**
+```js
+
+```
+
+## Create 'devUser'
+
 ```js
 use todo-dev
 db.createUser(
@@ -248,6 +271,7 @@ db.createUser(
 )
 ```
 
+### Verify 'devUser'
 
 Exit & login as testUser
 
@@ -256,17 +280,17 @@ ctrl+c
 mongo -u testUser -p --authenticationDatabase todo-test
 ```
 
-
-
-## Test testUser
 ```js
 use todo-test
 
-db.todos.insertOne({ title: 'todo1', completed: false })
-{
+db.todos.insertOne({ title: 'todo1', completed: false }) {
 	"acknowledged" : true,
 	"insertedId" : ObjectId("5cf316024766652dcde6f7b5")
 }
+```
+
+```js
+db.todos.find()
 ```
 
 Output
@@ -276,7 +300,6 @@ Output
 ... "insertedId" : ObjectId("5cf316024766652dcde6f7b5")
 ... }
 ```
-
 
 ```js
 
@@ -292,7 +315,7 @@ Output
 ... }
 ```
 
-## Commands
+## MongoDB Commands
 
 ```
 sudo systemctl start mongodb
@@ -330,3 +353,11 @@ npm i
 npm run test
 ```
 All tests should pass
+
+
+# Reference
+- [How To Securely Configure a Production MongoDB Server](https://www.digitalocean.com/community/tutorials/how-to-securely-configure-a-production-mongodb-server)
+- [Built-In Roles](https://docs.mongodb.com/manual/reference/built-in-roles/)
+- [Database Commands](https://docs.mongodb.com/manual/reference/command/)
+- [Role Management Commands](https://docs.mongodb.com/manual/reference/command/nav-role-management/)
+- [createUser](https://docs.mongodb.com/manual/reference/command/#user-management-commands)
