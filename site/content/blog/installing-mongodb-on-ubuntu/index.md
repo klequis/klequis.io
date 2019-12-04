@@ -91,15 +91,17 @@ mongo
 The `use admin` command switches you to the `admin` database. This will be the 'authentication database' for superUser.
 
 ```console
-
 use admin
+```
 
+Response:
+```js
+switched to db admin
 ```
 
 Now use `createUser()` the create the superUser with the [root role](https://docs.mongodb.com/manual/reference/built-in-roles/#root).
 
 ```console
-
 db.createUser(
   {
     user: "superUser",
@@ -109,6 +111,10 @@ db.createUser(
 )
 ```
 
+Response:
+```console
+Successfully added user: { "user" : "superUser", "roles" : [ "root" ] }
+```
 ## Enable Authenticaton
 
 To enable authentication you need to add a line to the `mongo.service` file.
@@ -182,20 +188,6 @@ MongoDB server version: 4.0.10
 
 ```
 
-
-- Try ...
-```
-db.getUsers()
-```
-... and get 'not authorized' message
-```
-2019-06-01T11:35:26.549-0700 E QUERY    [thread1] Error: not authorized on test to execute command { usersInfo: 1.0, $db: "test" } :
-_getErrorWithCode@src/mongo/shell/utils.js:25:13
-DB.prototype.getUsers@src/mongo/shell/db.js:1686:1
-@(shell):1:1
-
-```
-
 ## Login as 'superUser'
 
 If you are already in the mongo shell, exit using `ctrl-c`.
@@ -209,7 +201,8 @@ Use the below command to login as 'superUser'. The command options are:
 mongo -u superUser -p --authenticationDatabase admin
 ```
 
-> Security Tip
+> **Security Tip:**
+>
 > You could include your password in the above command as `-p yourPassword` but this would put your password in the [bash](https://www.gnu.org/software/bash/) history file which can be read by an attacker. Don't do it!.
 
 
@@ -223,8 +216,13 @@ Now create testUser. The command specifies
 - `pwd: "karl"`: The user's password is 'karl'.
 - `roles: [ { role: "readWrite", db: "todo-test" } ]`: The user is granted the [readWrite](https://docs.mongodb.com/manual/reference/built-in-roles/#readWrite) role in the `todo-test` database.
 
-```js
+Switch to `todo-test`
+```console
 use todo-test
+```
+
+Create 'testUser'
+```js
 db.createUser(
   {
     user: "testUser",
@@ -234,19 +232,53 @@ db.createUser(
 )
 ```
 
-### Verify 'testUser'
-```js
-use todo-test
-
-db.todos.insertOne({ title: 'todo1', completed: false }) {
-	"acknowledged" : true,
-	"insertedId" : ObjectId("5cf316024766652dcde6f7b5")
+Output
+```console
+Successfully added user: {
+	"user" : "testUser",
+	"roles" : [
+		{
+			"role" : "readWrite",
+			"db" : "todo-test"
+		}
+	]
 }
+```
+
+### Verify 'testUser'
+
+If you are still in the Mongo Shell exit using ctrl-c
+
+
+
+Login as testUser
+
+```console
+mongo -u testUser -p --authenticationDatabase todo-test
+```
+
+Switch to `todo-test`.
+
+```console
+use todo-test
+```
+
+Response:
+
+```console
+switched to db todo-test
+```
+
+```js
+db.todos.insertOne({ title: 'todo1', completed: false })
 ```
 
 **Output**
 ```js
-
+{
+ "acknowledged" : true,
+ "insertedId" : ObjectId("5cf316024766652dcde6f7b5")
+}
 ```
 
 ```js
@@ -254,14 +286,28 @@ db.todos.find()
 ```
 
 **Output**
+Your ObjectId will be different.
 ```js
+{ "_id" : ObjectId("5de709fa170028214eb1b060"), "title" : "todo1", "completed" : false }
 
 ```
 
 ## Create 'devUser'
 
+Login as superUser again
+
+Switch to `todo-dev`
+
 ```js
 use todo-dev
+```
+
+Response:
+```console
+switched to db todo-dev
+```
+
+```js
 db.createUser(
   {
     user: "devUser",
@@ -271,21 +317,51 @@ db.createUser(
 )
 ```
 
-### Verify 'devUser'
-
-Exit & login as testUser
+Response
 
 ```js
-ctrl+c
-mongo -u testUser -p --authenticationDatabase todo-test
+Successfully added user: {
+	"user" : "devUser",
+	"roles" : [
+		{
+			"role" : "readWrite",
+			"db" : "todo-dev"
+		}
+	]
+}
+```
+
+### Verify 'devUser'
+
+If you are still in the Mongo Shell exit using ctrl-c
+
+Exit & login as devUser
+
+```js
+mongo -u devUser -p --authenticationDatabase todo-dev
+```
+
+Switch to `todo-dev`
+
+```js
+use todo-dev
+```
+
+Resposne:
+```console
+switched to db todo-dev
 ```
 
 ```js
-use todo-test
+db.todos.insertOne({ title: 'todo1', completed: false })
+```
 
-db.todos.insertOne({ title: 'todo1', completed: false }) {
-	"acknowledged" : true,
-	"insertedId" : ObjectId("5cf316024766652dcde6f7b5")
+Response:
+
+```js
+{
+ "acknowledged" : true,
+ "insertedId" : ObjectId("5cf316024766652dcde6f7b5")
 }
 ```
 
@@ -295,37 +371,21 @@ db.todos.find()
 
 Output
 ```js
- {
-... "acknowledged" : true,
-... "insertedId" : ObjectId("5cf316024766652dcde6f7b5")
-... }
+{ "_id" : ObjectId("5de728de0d36cc3a5b23e03e"), "title" : "todo1", "completed" : false }
 ```
 
-```js
-
-db.todos.find()
-{ "_id" : ObjectId("5cf316024766652dcde6f7b5"), "title" : "todo1", "completed" : false }
-
-```
-Output
-```js
-{
-... "acknowledged" : true,
-... "insertedId" : ObjectId("5cf316024766652dcde6f7b5")
-... }
-```
 
 ## MongoDB Commands
 
 ```
-sudo systemctl start mongodb
-sudo systemctl stop mongodb
-sudo systemctl restart mongodb
-sudo systemctl status mongodb
+sudo systemctl start mongod
+sudo systemctl stop mongod
+sudo systemctl restart mongod
+sudo systemctl status mongod
 
 TODO: My guess is enable makes it start automatically and disable does not?
 sudo systemctl enable mongodb // don't start automatically
-sudo systemctl disable mongodb // don't start automatically
+sudo systemctl disable mongodb // start automatically
 ```
 
 
