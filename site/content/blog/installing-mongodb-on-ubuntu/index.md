@@ -10,24 +10,6 @@ slug: installing-mongodb-on-ubuntu
 title: Installing MongoDB on Ubuntu
 ---
 
-# <temp>
-
-- Install it
-- Illustrate auth not Enabled
-- create superUser
-- Enable authentication
-  - Verify authentication
-- Login as superUser
-- Create testUser
-  - Test testUser
-- Create devUser
-  - Test devUser
-- MongoDB Commands
-- xx - Test App (I don't thing this is needed but ...)
-- Reference
-
-# </temp>
-
 The production version of our app will use [MongoDB](https://mongodb.com) hosted on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). However, for development it is easier to work with MongoDB locally.
 
 ## MongoDB Local Install
@@ -95,11 +77,14 @@ use admin
 ```
 
 Response:
+
+
 ```js
 switched to db admin
 ```
+> You will see a `switched to db xyz` each time you use the `use` command. It will not be repeated below.
 
-Now use `createUser()` the create the superUser with the [root role](https://docs.mongodb.com/manual/reference/built-in-roles/#root).
+Now use `createUser()` to create 'superUser' with the [root role](https://docs.mongodb.com/manual/reference/built-in-roles/#root).
 
 ```console
 db.createUser(
@@ -112,52 +97,45 @@ db.createUser(
 ```
 
 Response:
+
 ```console
 Successfully added user: { "user" : "superUser", "roles" : [ "root" ] }
 ```
-## Enable Authenticaton
 
-To enable authentication you need to add a line to the `mongo.service` file.
+## Enable Authentication
 
-> In the steps below the editor 'GNU nano' will be used. However, you can use any editor you are comfortable with. I you want to know more about nano, [visit its documentation](https://www.nano-editor.org/dist/latest/nano.html).
+To enable authentication you need to modify a line in the `mongo.service` file.
+
+> In the steps below the editor 'GNU nano' will be used. However, you can use any editor you are comfortable with. If you want to know more about Nano, [visit its documentation](https://www.nano-editor.org/dist/latest/nano.html).
 
 Exit the mongo shell.
 
 ```console
-
 ctrl+c
-
 ```
 
-Use nano to edit the file.
+Use Nano to edit the file.
 
 ```
-
 sudo nano /lib/systemd/system/mongod.service
-
-
 ```
 
-Find the line
+Find this line:
 
 ```
 ExecStart=/usr/bin/mongod --config /etc/mongod.conf
-
 ```
 
-And add `--auth` to it so the full line is
+And add `--auth` to it so the full line is:
 
 ```
-
 ExecStart=/usr/bin/mongod --auth --config /etc/mongod.conf
-
 ```
 
-If you are not familiar with Nano, note the keyboard shortcuts at the bottom of the editor. To save the file and exit Nano
+If you are not familiar with Nano, it is keyboard driven. The shortcuts are at the bottom of the editor. To save the file and exit Nano:
 
 - `ctrl+o` then `enter` to write the file to disk
 - `ctrl+x` to exit Nano
-
 
 Next you need to reload system level configuration with the command:
 
@@ -170,7 +148,6 @@ And then restart the `mongod` process:
 ```
 sudo service mongod restart
 ```
-
 
 ## Verify Authentication
 
@@ -185,12 +162,11 @@ MongoDB shell version v4.0.10
 connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
 Implicit session: session { "id" : UUID("f0f33c53-812d-4db6-b4d2-a7eb30aa7048") }
 MongoDB server version: 4.0.10
-
 ```
 
 ## Login as 'superUser'
 
-If you are already in the mongo shell, exit using `ctrl-c`.
+If you are already in the Mongo Shell, exit using `ctrl-c`.
 
 Use the below command to login as 'superUser'. The command options are:
 - `-u superUser`: Login as user 'superUser'.
@@ -205,12 +181,11 @@ mongo -u superUser -p --authenticationDatabase admin
 >
 > You could include your password in the above command as `-p yourPassword` but this would put your password in the [bash](https://www.gnu.org/software/bash/) history file which can be read by an attacker. Don't do it!.
 
-
 ## Create testUser
 
 If you are not already logged in as 'superUser', follow the steps in the section above.
 
-Now create testUser. The command specifies
+Now create testUser. The command specifies:
 
 - `user: "testUser"`: The username is 'testUser'.
 - `pwd: "karl"`: The user's password is 'karl'.
@@ -232,7 +207,8 @@ db.createUser(
 )
 ```
 
-Output
+Response:
+
 ```console
 Successfully added user: {
 	"user" : "testUser",
@@ -249,9 +225,7 @@ Successfully added user: {
 
 If you are still in the Mongo Shell exit using ctrl-c
 
-
-
-Login as testUser
+Login as testUser.
 
 ```console
 mongo -u testUser -p --authenticationDatabase todo-test
@@ -263,17 +237,12 @@ Switch to `todo-test`.
 use todo-test
 ```
 
-Response:
-
-```console
-switched to db todo-test
-```
-
 ```js
 db.todos.insertOne({ title: 'todo1', completed: false })
 ```
 
-**Output**
+Response:
+
 ```js
 {
  "acknowledged" : true,
@@ -285,26 +254,21 @@ db.todos.insertOne({ title: 'todo1', completed: false })
 db.todos.find()
 ```
 
-**Output**
-Your ObjectId will be different.
+Response:
+__Your ObjectId will be different.__
+
 ```js
 { "_id" : ObjectId("5de709fa170028214eb1b060"), "title" : "todo1", "completed" : false }
-
 ```
 
 ## Create 'devUser'
 
-Login as superUser again
+Login as superUser again.
 
-Switch to `todo-dev`
+Switch to `todo-dev`.
 
 ```js
 use todo-dev
-```
-
-Response:
-```console
-switched to db todo-dev
 ```
 
 ```js
@@ -317,7 +281,7 @@ db.createUser(
 )
 ```
 
-Response
+Response:
 
 ```js
 Successfully added user: {
@@ -335,7 +299,7 @@ Successfully added user: {
 
 If you are still in the Mongo Shell exit using ctrl-c
 
-Exit & login as devUser
+Login as 'devUser'
 
 ```js
 mongo -u devUser -p --authenticationDatabase todo-dev
@@ -345,11 +309,6 @@ Switch to `todo-dev`
 
 ```js
 use todo-dev
-```
-
-Resposne:
-```console
-switched to db todo-dev
 ```
 
 ```js
@@ -369,11 +328,10 @@ Response:
 db.todos.find()
 ```
 
-Output
+Output:
 ```js
 { "_id" : ObjectId("5de728de0d36cc3a5b23e03e"), "title" : "todo1", "completed" : false }
 ```
-
 
 ## MongoDB Commands
 
