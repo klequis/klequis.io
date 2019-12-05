@@ -10,30 +10,24 @@ slug: installing-mongodb-on-ubuntu
 title: Installing MongoDB on Ubuntu
 ---
 
-The production version of our app will use [MongoDB](https://mongodb.com) hosted on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). However, for development it is easier to work with MongoDB locally.
+In this chapter you will install and configure [MongoDB](https://mongodb.com). We will be using the free Community Edition on our local development machine. In a later chapter, we will use [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) for the production version of our application.
 
 ## MongoDB Local Install
 
-MongoDB has excellent instructions on how to install the MongoDB Community Edition on Ubuntu. Install MongoDB on your local machine using the official documentation: [Install MongoDB Community Edition](https://docs.mongodb.com/manual/administration/install-community/). Once that is done the remainder of this article will focus on configuration.
-
-> TODO: How to incorporate this material?
+MongoDB has easy to follow and up to date instructions for installing the Community Edition on Ubuntu. Follow the instructions at [Install MongoDB Community Edition](https://docs.mongodb.com/manual/administration/install-community/) before proceeding with the configuration below.
 
 ## Definitions
 
-Reading the definition of a term doesn't always lead to immediate understanding. For me, the best way to learn new terms is to read through them, put them to use as you will do below, and then come back and read them again.
-
+- **Document:** A record in a MongoDB collection. If you are familiar with relational databases, it is roughly equivalent to a row in a table.
+- **Collection:** A grouping of MongoDB Documents. If you are familiar with relational databases, it is roughly equivalent to a table.
 - **Resource:** A resource can be a database, collection, set of collections or a cluster.
-
-- **Action:** An action specifies the operation allowed on the resource. For example 'find', 'create' or 'insert'.
-
+- **Action:** An action specifies an operation allowed on a resource. For example 'find', 'create' or 'insert' on the 'todo' database.
 - **Privilege:** A privilege consists of a specified resource and the actions permitted on it.
-
 - **Role:** A set of privileges. A role can contain one or more privileges. It can also contain other roles, in which case granting the role to a user applies the privileges in the contained role.
 - **Built-in roles:** Built-in roles are roles that come with MongoDB by default. A complete list of built-in roles can be found at: [Built-In Roles](https://docs.mongodb.com/manual/reference/built-in-roles/).
-- **User-defined roles:** User-defined roles are roles that are created by a MongoDB user. You use them to customize privileges according to your needs. Read more about user-defined roles at: [User-Defined roles](https://docs.mongodb.com/manual/core/security-user-defined-roles/)
-- **Role-Based Access Control:** Initially after installation, access control is not enabled. This means authentication is not required to access MongoDB. Once you enable access control users must authenticate themselves. Role-based access control. Read more at: [Role-Based Access Control](https://docs.mongodb.com/manual/core/authorization/#role-based-access-control)
-- **Authentication Database:** You create a given user in a given database and that becomes the authentication database for the user. However, a user's privileges are not limited to that database. You can assign it roles in other databases as well. Read more at: [Authentication Database](https://docs.mongodb.com/manual/core/security-users/#user-authentication-database)
-
+- **User-defined roles:** User-defined roles are roles that are created by a MongoDB user. You use them to customize privileges according to your needs. Read more about user-defined roles at: [User-Defined roles](https://docs.mongodb.com/manual/core/security-user-defined-roles/).
+- **Role-Based Access Control:** With role-based access control a user is granted one or more roles that determine the users access to resources and operations. Read more at: [Role-Based Access Control](https://docs.mongodb.com/manual/core/authorization/#role-based-access-control).
+- **Authentication Database:** You create a given user in a given database and that becomes the authentication database for the user. However, a user's privileges are not limited to that database. You can assign it roles in other databases as well. Read more at: [Authentication Database](https://docs.mongodb.com/manual/core/security-users/#user-authentication-database).
 
 Now we will configure MongoDB. We need to:
 - Create super & test users.
@@ -41,18 +35,18 @@ Now we will configure MongoDB. We need to:
 - Perform some brief testing for each user.
 
 
-> We will be using the MongoDB Shell. If you are not familiar with it see [The mongo Shell](https://docs.mongodb.com/manual/mongo/).
+> We will be using the Mongo Shell. If you are not familiar with it see [The mongo Shell](https://docs.mongodb.com/manual/mongo/).
 
 ---
 ## Authentication is Not Enabled
 
-Before creating users let's take a quick look the current lack of authentication. Start the MongoDB shell. The command is simply `mongo`.
+Initially after installation access control is not enabled. This means authentication is not required to access MongoDB and an unauthenticated user has full control. Once you enable access control users must authenticate. Before creating users let's take a quick look the current lack of authentication. Start the Mongo Shell:
 
 ```console
 mongo
 ```
 
-As you can see from the output in the image below, your in and have full access. We will fix this issue below, but first we need a user to authenticate with.
+As you can see from the response in the image below, there are no restrictions on the user. We will address this issue after creating the first user.
 
 <em>click on the image for a larger view</em>
 <br><br>
@@ -61,32 +55,30 @@ As you can see from the output in the image below, your in and have full access.
 
 ## Create superUser
 
-The first user to create is the 'superUser'. This user has full access and will only be used for certain tasks.
+The first user will be named 'superUser'. This user will have full access and will only be used for certain tasks.
 
-If you are not still in the mongo shell type `mongo` to enter it.
+If not already in the Mongo Shell type `mongo` to enter it.
 
 ```console
 mongo
-
 ```
 
-The `use admin` command switches you to the `admin` database. This will be the 'authentication database' for superUser.
+The `use admin` command switches you to the `admin` database. This will be the _authentication database_ for superUser.
 
 ```console
 use admin
 ```
 
-Response:
+**Response:**
 
-
-```js
+```console
 switched to db admin
 ```
-> You will see a `switched to db xyz` each time you use the `use` command. It will not be repeated below.
+> You will see a `switched to db xyz` each time you use the `use` command.
 
 Now use `createUser()` to create 'superUser' with the [root role](https://docs.mongodb.com/manual/reference/built-in-roles/#root).
 
-```console
+```js
 db.createUser(
   {
     user: "superUser",
@@ -96,19 +88,22 @@ db.createUser(
 )
 ```
 
-Response:
+**Response:**
 
 ```console
-Successfully added user: { "user" : "superUser", "roles" : [ "root" ] }
+Successfully added user: {
+  "user" : "superUser",
+  "roles" : [ "root" ]
+}
 ```
 
 ## Enable Authentication
 
 To enable authentication you need to modify a line in the `mongo.service` file.
 
-> In the steps below the editor 'GNU nano' will be used. However, you can use any editor you are comfortable with. If you want to know more about Nano, [visit its documentation](https://www.nano-editor.org/dist/latest/nano.html).
+> In the steps below use [GNU Nano](https://www.nano-editor.org/). However, you can use any editor you are comfortable with. If you want to know more about Nano, [visit its documentation](https://www.nano-editor.org/dist/latest/nano.html).
 
-Exit the mongo shell.
+Exit the Mongo Shell.
 
 ```console
 ctrl+c
@@ -116,17 +111,17 @@ ctrl+c
 
 Use Nano to edit the file.
 
-```
+```console
 sudo nano /lib/systemd/system/mongod.service
 ```
 
-Find this line:
+Find this line.
 
 ```
 ExecStart=/usr/bin/mongod --config /etc/mongod.conf
 ```
 
-And add `--auth` to it so the full line is:
+Add `--auth` to it so the full line is:
 
 ```
 ExecStart=/usr/bin/mongod --auth --config /etc/mongod.conf
@@ -139,25 +134,30 @@ If you are not familiar with Nano, it is keyboard driven. The shortcuts are at t
 
 Next you need to reload system level configuration with the command:
 
-```
+```console
 sudo systemctl daemon-reload
 ```
 
-And then restart the `mongod` process:
+And then restart the `mongod` process.
 
-```
+```console
 sudo service mongod restart
 ```
 
 ## Verify Authentication
 
-```js
+
+Re-enter the Mongo Shell.
+
+```console
 mongo
 ```
 
-Output - no longer warning about authentication
+**Response:**
 
-```js
+There is longer a warning about authentication.
+
+```console
 MongoDB shell version v4.0.10
 connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
 Implicit session: session { "id" : UUID("f0f33c53-812d-4db6-b4d2-a7eb30aa7048") }
@@ -192,11 +192,13 @@ Now create testUser. The command specifies:
 - `roles: [ { role: "readWrite", db: "todo-test" } ]`: The user is granted the [readWrite](https://docs.mongodb.com/manual/reference/built-in-roles/#readWrite) role in the `todo-test` database.
 
 Switch to `todo-test`
+
 ```console
 use todo-test
 ```
 
 Create 'testUser'
+
 ```js
 db.createUser(
   {
@@ -207,7 +209,7 @@ db.createUser(
 )
 ```
 
-Response:
+**Response:**
 
 ```console
 Successfully added user: {
@@ -241,21 +243,22 @@ use todo-test
 db.todos.insertOne({ title: 'todo1', completed: false })
 ```
 
-Response:
+**Response:**
 
-```js
+```console
 {
  "acknowledged" : true,
  "insertedId" : ObjectId("5cf316024766652dcde6f7b5")
 }
 ```
 
+> Your ObjectId will be different.
+
 ```js
 db.todos.find()
 ```
 
-Response:
-__Your ObjectId will be different.__
+**Response:**
 
 ```js
 { "_id" : ObjectId("5de709fa170028214eb1b060"), "title" : "todo1", "completed" : false }
@@ -267,7 +270,7 @@ Login as superUser again.
 
 Switch to `todo-dev`.
 
-```js
+```console
 use todo-dev
 ```
 
@@ -281,9 +284,9 @@ db.createUser(
 )
 ```
 
-Response:
+**Response:**
 
-```js
+```console
 Successfully added user: {
 	"user" : "devUser",
 	"roles" : [
@@ -301,13 +304,13 @@ If you are still in the Mongo Shell exit using ctrl-c
 
 Login as 'devUser'
 
-```js
+```console
 mongo -u devUser -p --authenticationDatabase todo-dev
 ```
 
 Switch to `todo-dev`
 
-```js
+```console
 use todo-dev
 ```
 
@@ -315,9 +318,9 @@ use todo-dev
 db.todos.insertOne({ title: 'todo1', completed: false })
 ```
 
-Response:
+**Response:**
 
-```js
+```console
 {
  "acknowledged" : true,
  "insertedId" : ObjectId("5cf316024766652dcde6f7b5")
@@ -328,45 +331,59 @@ Response:
 db.todos.find()
 ```
 
-Output:
-```js
-{ "_id" : ObjectId("5de728de0d36cc3a5b23e03e"), "title" : "todo1", "completed" : false }
+**Response:**
+
+```console
+{
+  "_id" : ObjectId("5de728de0d36cc3a5b23e03e"),
+  "title" : "todo1", "completed" : false
+}
 ```
 
 ## MongoDB Commands
 
 ```
+// Start MongoDB
 sudo systemctl start mongod
+
+// Stop MongoDB
 sudo systemctl stop mongod
+
+// Restart MongoDB
 sudo systemctl restart mongod
+
+// Get MongoDB status
 sudo systemctl status mongod
 
-TODO: My guess is enable makes it start automatically and disable does not?
+TODO: TEST THE 2 BELOW
+
+// Start MongoDB when system starts
 sudo systemctl enable mongodb // don't start automatically
+
+// Do not start MongoDB when system starts
 sudo systemctl disable mongodb // start automatically
 ```
 
-
 ## Test App
 1. clone app
-```js
+```console
 git clone https://github.com/klequis/wrapping-calls-to-mongodb.git
 ```
 2. Open in vs code
-```js
+```console
 cd wrapping-calls-to-mongodb
 code .
 ```
 __index.js__
-```js
+```console
 return 'mongodb://localhost:27017'
 ```
 to
-```js
+```console
 return 'mongodb://testUser:password@localhost:27017'
 ```
 
-```js
+```console
 npm i
 npm run test
 ```
