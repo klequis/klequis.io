@@ -13,9 +13,9 @@ title: Building a Ubuntu Desktop Virtual Machine with VirtualBox
 ![banner](media/hero-blog.png)
 
 
-There are many reasons why you may want to build a Linux virtual machine. For me, as an employee of large corporations I was a Windows user for nearly 15 years and used mostly Microsoft development tools. When I left the corportate world and started using non-Microsoft tools I quickly realized that most 'how to' information on the web was for Mac or Linux. I either had to search harder to find Windows information or spend time figuring it out. Not wanting to buy a Mac at that point I tried Linux and have been using it for the past five years. While I originally used Ubuntu in a virtual machine, I eventually removed Windows and installed Ubuntu. I have Windows as a virtual machine because I love Microsoft Excel.
+There are many reasons why you may want to build a Linux virtual machine. For me, as an employee of large corporations I was a Windows user for nearly 15 years and used mostly Microsoft development tools. When I left the corporate world and started using non-Microsoft tools I quickly realized that most 'how to' information on the web was for Mac or Linux. I either had to search harder to find Windows information or spend time figuring it out. Not wanting to buy a Mac at that point I tried Linux and have been using it for the past five years. While I originally used Ubuntu in a virtual machine, I eventually removed Windows and installed Ubuntu. I have Windows as a virtual machine because I love Microsoft Excel.
 
-Here are a few other reasons to consider linux:
+Here are a few other reasons to consider Linux:
 - Your app will run on Linux in production and you want to do development on Linux as well to reduce the complications of development and deployment.
 - You want to run a web and/or database server on Linux.
 - You may be curious about a different operating system.
@@ -31,7 +31,7 @@ A couple of words used frequently in this article:
 - **Host:** - The host machine is the machine you install VirtualBox on. This will be a Linux, Mac or Windows machine running directly on your machines hardware.
 - **Guest:** - The guest machine is the virtual machine that you run using VirtualBox.
 
-## Prerequisetes
+## Prerequisites
 
 ### Memory
 
@@ -53,16 +53,16 @@ Any multi-core processor, Intel or AMD, made in the last 8 to 10 years should be
 - Click 'Download' next to Ubuntu 18.04 LTS
 - Wait for the download to complete or, if you have the bandwidth, move on to the next step while it downloads.
 
-> Ubuntu 19.04 is beautiful to look at compared to 18.04, but it is a short-term release and therefore not widly supported by all of the apps and tools you will need.
+> Ubuntu 19.04 is beautiful to look at compared to 18.04, but it is a short-term release and therefore not widely supported by all of the apps and tools you will need.
 
 ## Installing VirtualBox
-Go to the [VirtualBox download page](https://www.virtualbox.org/wiki/Downloads) and download the package for your host OS. Then follow the usual installation proceedure for your host OS.
+Go to the [VirtualBox download page](https://www.virtualbox.org/wiki/Downloads) and download the package for your host OS. Then follow the usual installation procedure for your host OS.
 
 ## Host Key & Stolen Shortcut Key Combinations
 
 Before creating the virtual machine we need to change some VirtualBox settings related to the 'host key'.
 
-The 'host key' is a key that when used specifies that you want to perform an action on the virtual machine container and not the OS running inside of the virtual machine. When using a Linux host the host key is set to 'right ctrl'. Unfortunately, that means when using the virtual machine and you want to perform an action such as copy with ctrl-c, the key command is captured by VirtualBox and is not received by the guest OS. Hence, you can't copy with the keyboard :).
+The 'host key' is a key that when used specifies that you want to perform an action on the virtual machine container and not the OS running inside of the virtual machine. When using a Linux host the host key is set to <kbd>right ctrl</kbd>. Unfortunately, that means when using the virtual machine and you want to perform an action such as copy with <kbd>ctrl-c</kbd>, the key command is captured by VirtualBox and is not received by the guest OS. Hence, you can't copy with the keyboard :).
 
 Given how I use a virtual machine I don't really have a need for a host key and I set it to 'None'. However, it could also be set to something else to suite your needs. Here is how to set it to 'None'.
 
@@ -183,7 +183,7 @@ By default the VM was given one processor. For my machine it says I have 8 CPUs.
 ![keyboard layout](media/keyboard-layout.png)
 
 ### Updates and other software
-'Normal installation' will give you a full featured desktop experience with word processor, spreasheet, media player and much more. 'Minimal installation' is, well, fewer applications but perfectly good for software development. If you are curious about the full Ubuntu experience, choose 'Normal installation'. If you want to save space choose 'Minimal installation'. You can always install additional software later.
+'Normal installation' will give you a full featured desktop experience with word processor, spreadsheet, media player and much more. 'Minimal installation' is, well, fewer applications but perfectly good for software development. If you are curious about the full Ubuntu experience, choose 'Normal installation'. If you want to save space choose 'Minimal installation'. You can always install additional software later.
 
 With Ubuntu 16.04, the previous long term release, I experienced the build hanging if 'Download updates while installing Ubuntu' was checked and suggest you leave it unchecked. Ubuntu will prompt you shortly after installation is complete to install the updates.
 
@@ -191,7 +191,7 @@ With Ubuntu 16.04, the previous long term release, I experienced the build hangi
 'Install third-party software for graphics and Wi-Fi hardware and additional media formats' is generally beneficial. Make it checked.
 
 - Select 'Normal installation' or 'Minimal installation'
-- Un-check Download updatees while installing Ubuntu
+- Un-check Download updates while installing Ubuntu
 - Check 'Install third-party software for graphics and Wi-Fi hardware and additional media formats'
 - Click Continue
 
@@ -217,14 +217,14 @@ With Ubuntu 16.04, the previous long term release, I experienced the build hangi
 
 ### Who are you?
 - **Your name:** Enter any name
-- **Your computer's name:** The most noticable palce this will show-up is on the command line. A long command line is harder to read so a short name is better. Enter a name for your computer.
+- **Your computer's name:** The most noticeable place this will show-up is on the command line. A long command line is harder to read so a short name is better. Enter a name for your computer.
 - **Pick a username:** This will be the name of the first user created and will also show-up on the command line. Keeping it short applies here as well. Enter your username.
 - **Choose a password:** Enter a password
 - **Confirm your password:** Re-enter the password
 - Click **'Log in automatically'** or **'Require my password to log in'** - your choice
 - Click Continue
 
-> NOTE: By default, the VM will not accept any incoming requests/conections. I also have a firewall on my host and, no surprise, my local network is behind a router. Additionally, if the host is locked, no one can log into the guest without the host password. Given all of that, I choose the convenience of using a short 4 character not so secret password, as well as 'Log in automatically'.
+> NOTE: By default, the VM will not accept any incoming requests/connections. I also have a firewall on my host and, no surprise, my local network is behind a router. Additionally, if the host is locked, no one can log into the guest without the host password. Given all of that, I choose the convenience of using a short 4 character not so secret password, as well as 'Log in automatically'.
 
 ![Who are you](media/who-are-you.png)
 
@@ -243,7 +243,7 @@ Time for a break
 
 ### Installation Complete
 
-The installation of Ubuntu is compelte.
+The installation of Ubuntu is complete.
 
 - Click Restart Now
 
@@ -266,7 +266,7 @@ At some point soon after installation, you will soon see a message from the Ubun
 
 ## All Done? Not Quite.
 
-You now have a Ubuntu Virtual Machine but need to install VirtualBox 'Guest Additions' which will add crutial features to the VM. The most noticable of these is that the virtual machine will display full-screen instead of the small box you have seen so far.
+You now have a Ubuntu Virtual Machine but need to install VirtualBox 'Guest Additions' which will add crucial features to the VM. The most noticeable of these is that the virtual machine will display full-screen instead of the small box you have seen so far.
 
 ![all done](media/all-done.png)
 
@@ -295,7 +295,7 @@ You will be asked to enter the current user's password.
 ![authentication required](media/authentication-required.png)
 
 
-When guest additions is done installing close the terminal and retart the VM.
+When guest additions is done installing close the terminal and restart the VM.
 
 <hr />
 

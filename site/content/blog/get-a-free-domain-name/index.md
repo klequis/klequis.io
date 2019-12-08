@@ -4,7 +4,7 @@ modifiedDate: ''
 partOfBook: true
 postFooterText: ''
 postFooterIcon: finish-flag
-previewImage: 
+previewImage:
 publishedDate: '2019-11-11'
 slug: get-a-free-domain-name
 title: Get a Free Domain Name from freenom
@@ -12,18 +12,18 @@ title: Get a Free Domain Name from freenom
 
 ## There are no free domain names
 
-I would define free as 1) not paying to register the domain name & 2) you are really the liscensee of the domain name. 
+I would define free as 1) not paying to register the domain name & 2) you are really the licensee of the domain name.
 
-As far as I can tell, there are no free domain names. However, you can use a domain name for free by signing-up with [freenom](https://www.freenom.com) and get a completely usable domain name for [this series](https://klequis.io/full-stack-mern-development-series/).
+As far as I can tell, there are no free domain names. However, you can use a domain name for free by signing-up with [freenom](https://www.freenom.com) and get a completely usable domain name for [this book](https://klequis.io/full-stack-mern-development-series/).
 
-> For this series, you can use any domain name you own or have the right to use. However, some small amount of the steps to follow will be specific to freenom so you may want to get one from there. 
+> For this book, you can use any domain name you own or have the right to use. However, some small amount of the steps to follow will be specific to freenom so you may want to get one from there.
 
 
 ## Getting a domain name from freenom
 
 If you have never registered a [domain name](https://en.wikipedia.org/wiki/Domain_name) before don't worry, it is fast and easy.
 
-You can use a free or paid domain name for this series. Here are instructions for getting a free domain name from [freenom](https://www.freenom.com).
+You can use a free or paid domain name for this book. Here are instructions for getting a free domain name from [freenom](https://www.freenom.com).
 
 - Go to [https://www.freenom.com](https://www.freenom.com)
 - Search for a domain name.

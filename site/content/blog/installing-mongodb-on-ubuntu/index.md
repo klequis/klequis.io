@@ -18,6 +18,8 @@ In this section you will install and configure [MongoDB](https://mongodb.com). W
 >
 > If you built and are using the virtual machine from [Building a Ubuntu Desktop Virtual Machine with VirtualBox](https://klequis.io/ubuntu-vm-virtualbox/) and have not changed the default network settings, you are well protected.
 
+> [MongoDB University](https://university.mongodb.com/) is free and a great way to learn MongoDB!
+
 ## Definitions
 
 Here definitions for terms used in this section.

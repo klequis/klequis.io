@@ -28,7 +28,7 @@ When the installation is complete launch VS Code.
 
 The full power of VS Code is found in its rich [ecosystem of extensions](https://marketplace.visualstudio.com/vscode).
 
-If you are following the [Full-Stack MERN Development Series](https://klequis.io/full-stack-mern-development-series/) you will be making use of Prettier. The other extensions are some of my favorites. Click on each link to see what they do.
+If you are following the [Full-Stack MERN Development Book](https://klequis.io/full-stack-mern-development-series/) you will be making use of Prettier. The other extensions are some of my favorites. Click on each link to see what they do.
 
 To add extensions
 - Click on the extensions icon.

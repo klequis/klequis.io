@@ -122,7 +122,7 @@ You can use Ubuntu 18.04 without customization, but I have some preferences and 
 
 ### Settings
 
-Settings is a mixture of settings and customizations. I would say turning Bluetooth on or off is a setting, but changing the desktop background is a customization. Settings does both but mostly 'settings'. Pick through the menus to see the possibilities.
+Settings is a mixture of settings and customization. I would say turning Bluetooth on or off is a setting, but changing the desktop background is a customization. Settings does both but mostly 'settings'. Pick through the menus to see the possibilities.
 
 ![settings > Dock](media/settings.png)
 

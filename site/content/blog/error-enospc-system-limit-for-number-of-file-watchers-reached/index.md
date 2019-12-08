@@ -10,10 +10,10 @@ slug: error-enospc-system-limit-for-number-of-file-watchers-reached
 title: Error ENOSPC System limit for number of file watchers reached
 ---
 
-I rebuilt my machine a few days ago and today got an error message I have nevers seen before.
+I rebuilt my machine a few days ago and today got an error message I have never seen before.
 
 ```console
-Error: ENOSPC: System limit for number of file watchers reached, 
+Error: ENOSPC: System limit for number of file watchers reached,
 watch '/home/.../site/src/components/layout.js'
 ```
 
@@ -64,6 +64,3 @@ cat /proc/sys/fs/inotify/max_user_watches
 
 - [Increasing the amount of inotify watchers](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers#the-technical-details)
 - [Error: ENOSPC: System limit for number of file watchers reached, watch '/home/foldername/abcrypto/static' #11406](https://github.com/gatsbyjs/gatsby/issues/11406)
-
-
-
