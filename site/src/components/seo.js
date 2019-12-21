@@ -36,7 +36,12 @@ const SEO = ({
     title: siteMetaTitle,
   } = site.siteMetadata
 
-  const fullCanonicalUrl = `${siteMetaUrl}/${slug}`
+  // Fixing this error:
+  //   We could not resolve the canonical URL because the
+  //   redirect path contained a cycle.
+  // Requires a '/' on the end of fullCononicalUrl
+  // https://github.com/klequis/coding-notebook/issues/5
+  const fullCanonicalUrl = `${siteMetaUrl}/${slug}/`
 
   let pageUrlNoFinalSlash
   if (pageUrl !== undefined) {
