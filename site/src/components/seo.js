@@ -102,6 +102,10 @@ const SEO = ({
           // content: ogUrl,
           content: fullCanonicalUrl,
         },
+        {
+          property: `fb:app_id`,
+          content: 495377417716964
+        }
       ]}
     />
   )
