@@ -4,9 +4,9 @@ modifiedDate: ''
 partOfBook: true
 postFooterText: ''
 postFooterIcon: ''
-previewImage: ''
-publishedDate: '2019-12-10'
-slug: installing-robo-3t-ubuntu
+previewImage: https://res.cloudinary.com/klequis/image/upload/v1576943822/installing-mongodb-compass.post_evgiuc.png
+publishedDate: '2019-12-21'
+slug: installing-mongodb-compass-ubuntu
 title: Installing MongoDB Compass on Ubuntu
 ---
 
