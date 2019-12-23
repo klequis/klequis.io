@@ -27,7 +27,7 @@ Below is the current outline with links to articles already published.
     1. [Get a Domain](https://klequis.io/get-a-free-domain-name/)
     2. [Build an Ubuntu Virtual Machine](https://klequis.io/ubuntu-vm-virtualbox/)
     3. [A Quick Opinionated Introduction to Ubuntu 18.04](https://klequis.io/quick-introduction-to-using-ubuntu-18.04/)
-    4. Development Machine Setup
+    4. MERN Development Environment Setup
         1. [Install NodeJS](https://klequis.io/installing-nodejs-ubuntu/)
         2. [Install Git](https://klequis.io/installing-git-ubuntu/)
         3. [Install nodemon](https://klequis.io/installing-nodemon-ubuntu/)
