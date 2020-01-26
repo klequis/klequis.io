@@ -309,6 +309,24 @@ a {
 }
 
 /* Over-ride fairygates theme for blockquote color */
-blockquote {
+/* blockquote {
   color: rgba(255, 255, 255, 0.88);
+} */
+
+blockquote {
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+	padding-left: 0.90625rem;
+	padding-right: 0;
+	padding-top: 0;
+	margin-bottom: 1.45rem;
+	font-size: 1.1487rem;
+	line-height: 1.45rem;
+	border-left: 0.54375rem solid #1ca086;
+	color: rgba(255, 255, 255, 0.88);
+	font-style: italic;
+	border-left-color: inherit;
+	opacity: 0.8;
 }
