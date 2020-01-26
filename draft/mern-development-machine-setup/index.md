@@ -12,8 +12,7 @@ title: MERN Development Environment/Machine Setup
 
 'MERN' is an acronym that stands for a set of technologies consisting of MongoDB, Express, React & Node. Before getting started developing applications with the MERN stack you need to setup your development machine properly.
 
-This section will guide you through the complete setup of a MERN stack development environment on Ubuntu 18.04.
-
+This section will guide you through installing and configuring all the prerequisites required to start developing with the MERN stack on Ubuntu 18.04.
 
 1. [Install NodeJS](https://klequis.io/installing-nodejs-ubuntu/)
 2. [Install Git](https://klequis.io/installing-git-ubuntu/)

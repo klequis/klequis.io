@@ -307,3 +307,8 @@ pre[data-line] {
 a {
   background-image: none;
 }
+
+/* Over-ride fairygates theme for blockquote color */
+blockquote {
+  color: rgba(255, 255, 255, 0.88);
+}
