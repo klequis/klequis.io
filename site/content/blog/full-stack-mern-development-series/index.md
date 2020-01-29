@@ -5,7 +5,7 @@ partOfBook: false
 postFooterText: none
 postFooterIcon: none
 previewImage:
-publishedDate: "2019-09-25"
+publishedDate: 
 slug: full-stack-mern-development-series
 title: Full-Stack MERN Development
 ---
